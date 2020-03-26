@@ -1,0 +1,295 @@
+body, html, .page, .page-box {
+padding: 0;
+margin: 0;
+}
+
+.router-item[route-active="false"] {
+display: none;
+}
+
+.owo-animation {
+overflow: hidden;
+-webkit-backface-visibility: hidden;
+backface-visibility: hidden;
+transform: translate3d(0, 0, 0);
+transform-style: preserve-3d;
+}
+.owo-animated {
+-webkit-animation-duration: 1s;
+animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;
+}
+.owo-animation-forward {
+z-index: 99;
+}
+
+img {
+border: none;
+}
+
+/* 清除浮动 */
+.clear:after {
+content: "";
+height: 0;
+line-height: 0;
+display: block;
+visibility: hidden;
+clear: both;
+zoom: 1;
+}
+
+ul {
+margin: 0;
+padding: 0;
+}
+
+li {
+list-style: none;
+}
+.owo-animation-shrink {
+-webkit-animation: shrink 1s linear alternate infinite;
+animation: shrink 1s linear alternate infinite;
+}
+@-webkit-keyframes shrink{
+0%{-webkit-transform:scale(0.9);}
+100%{-webkit-transform:scale(1);}
+}
+@keyframes shrink{
+0%{transform:scale(0.9);}
+100%{transform:scale(1);}
+}
+
+.loading-box {
+width: 100%;
+height: 100%;
+background-image: url('../resource/lanse.jpg');
+}
+
+.loading-box .loading {
+position: absolute;
+left: 0;
+right: 0;
+top: -23%;
+bottom: 0;
+margin: auto;
+}
+
+.loading-box .loading-bar {
+position: absolute;
+top: 0%;
+bottom: 0%;
+height: 20px;
+background-color: white;
+width: 80%;
+margin: auto;
+left: 0;
+right: 0;
+border-radius: 20px;
+padding: 10px;
+box-shadow: 7px 7px 9px #c3bcbc;
+}
+
+.loading-box .num-bar {
+background-color: #e47d6e;
+height: 20px;
+border-radius: 20px;
+width: 0%;
+transition: width 0.5s;
+}
+
+.loading-box .num,
+.loading-box .text {
+position: absolute;
+top: 0%;
+bottom: -8%;
+margin: auto;
+line-height: 50px;
+height: 50px;
+font-size: 36px;
+width: 100%;
+text-align: center;
+color: #e17868;
+font-weight: bold;
+}
+
+.loading-box .text {
+bottom: -14%;
+}
+
+.loading-box .play-button {
+position: absolute;
+bottom: 30%;
+left: 0;
+right: 0;
+margin: auto;
+display: none;
+}
+.video-play,
+.video-play video {
+display: block;
+width: 100%;
+height: 100%;
+}
+.name {
+background-image: url('../resource/318.jpg');
+}
+
+.name .so {
+position: absolute;
+}
+
+.name .so-0 {
+left: 432px;
+top: 951px;
+z-index: 7;
+}
+
+.name .so-1 {
+left: 435px;
+top: 954px;
+z-index: 6;
+}
+
+.name .so-2 {
+left: 242px;
+top: 833px;
+z-index: 5;
+}
+
+.name .so-3 {
+left: 194px;
+top: 1042px;
+z-index: 4;
+}
+
+.name .so-4 {
+left: 28px;
+top: 184px;
+z-index: 3;
+}
+
+.name .so-5 {
+left: 591px;
+top: 1150px;
+z-index: 2;
+}
+
+.name .so-6 {
+left: 39px;
+top: 1140px;
+z-index: 1;
+}
+
+.name .so-7 {
+left: 167px;
+top: 1235px;
+z-index: 0;
+}
+.page-1 {
+background-image: url('../resource/page-1.jpg');
+}
+
+.page-1 .so {
+position: absolute;
+}
+
+.page-1 .so-0 {
+left: 65px;
+top: 868px;
+z-index: 9;
+}
+
+.page-1 .so-1 {
+left: 78px;
+top: 772px;
+z-index: 8;
+}
+
+.page-1 .so-2 {
+left: 304px;
+top: 188px;
+z-index: 7;
+}
+
+.page-1 .so-3 {
+left: 21px;
+top: 303px;
+z-index: 6;
+}
+
+.page-1 .so-4 {
+left: 431px;
+top: 1273px;
+z-index: 5;
+}
+
+.page-1 .so-5 {
+left: 159px;
+top: 1273px;
+z-index: 4;
+}
+
+.page-1 .so-6 {
+left: 152px;
+top: 325px;
+z-index: 3;
+}
+
+.page-1 .so-7 {
+left: 78px;
+top: 314px;
+z-index: 2;
+}
+
+.page-1 .so-8 {
+left: 153px;
+top: 570px;
+z-index: 1;
+opacity: 0.6;
+}
+
+.page-1 .so-9 {
+left: 55px;
+top: 473px;
+z-index: 0;
+opacity: 0.6;
+}
+.share {
+background-image: url('../resource/page-1.jpg');
+}
+
+.share .so {
+position: absolute;
+}
+
+.share .so-0 {
+left: 91px;
+top: 209px;
+z-index: 4;
+}
+
+.share .so-1 {
+left: 286px;
+top: 1272px;
+z-index: 3;
+}
+
+.share .so-2 {
+left: 482px;
+top: 1273px;
+z-index: 2;
+}
+
+.share .so-3 {
+left: 91px;
+top: 1273px;
+z-index: 1;
+}
+
+.share .so-4 {
+left: 73px;
+top: 185px;
+z-index: 0;
+}
+/* 页面切换动画 */

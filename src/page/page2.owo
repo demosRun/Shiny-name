@@ -1,0 +1,23 @@
+<template lang="pug">
+.share
+  img.so.so-0(src="@|249.png|")
+  img.so.so-1(src="@|246.png|" go="page1/////true")
+  img.so.so-2(src="@|232.png|")
+  img.so.so-3(src="@|228.png|")
+  img.so.so-4(src="@|273-2.png|")
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+.share {
+  background-image: url('@|page-1.jpg|');
+}
+.so {position: absolute;}
+.so-0 {left: 91px;top: 209px;z-index: 4}
+.so-1 {left: 286px;top: 1272px;z-index: 3}
+.so-2 {left: 482px;top: 1273px;z-index: 2}
+.so-3 {left: 91px;top: 1273px;z-index: 1}
+.so-4 {left: 73px;top: 185px;z-index: 0}
+</style>

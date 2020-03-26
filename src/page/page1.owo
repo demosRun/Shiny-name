@@ -1,0 +1,39 @@
+<template lang="pug">
+.page-1
+  img.so.so-0(src="@|273.png|")
+  img.so.so-1(src="@|274.png|")
+  img.so.so-2(src="@|202.png|")
+  img.so.so-3(src="@|275.png|")
+  img.so.so-4(src="@|200.png|" go="page2/////true")
+  img.so.so-5(src="@|196.png|")
+  img.so.so-6(src="@|276.png|")
+  img.so.so-7(src="@|277.png|")
+  img.so.so-8(src="@|189.png|")
+  img.so.so-9(src="@|188.png|")
+</template>
+
+<script>
+  module.exports = {
+    created: function () {
+
+    }
+  }
+</script>
+
+
+<style lang="less">
+.page-1 {
+  background-image: url('@|page-1.jpg|');
+}
+.so {position: absolute;}
+.so-0 {left: 65px;top: 868px;z-index: 9}
+.so-1 {left: 78px;top: 772px;z-index: 8}
+.so-2 {left: 304px;top: 188px;z-index: 7}
+.so-3 {left: 21px;top: 303px;z-index: 6}
+.so-4 {left: 431px;top: 1273px;z-index: 5}
+.so-5 {left: 159px;top: 1273px;z-index: 4}
+.so-6 {left: 152px;top: 325px;z-index: 3}
+.so-7 {left: 78px;top: 314px;z-index: 2}
+.so-8 {left: 153px;top: 570px;z-index: 1;opacity: 0.6;}
+.so-9 {left: 55px;top: 473px;z-index: 0;opacity: 0.6;}
+</style>

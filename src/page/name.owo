@@ -1,0 +1,29 @@
+<template lang="pug">
+.name
+  img.so.so-0(src="@|334.png|")
+  img.so.so-1(src="@|372.png|")
+  img.so.so-2(src="@|373.png|")
+  img.so.so-3(src="@|374.png|")
+  img.so.so-4(src="@|375.png|")
+  img.so.so-5(src="@|325.png|")
+  img.so.so-6(src="@|377.png|")
+  img.so.so-7(src="@|320.png|")
+</template>
+<script>
+module.exports = {
+}
+</script>
+<style lang="less">
+.name {
+  background-image: url('@|318.jpg|');
+}
+.so {position: absolute;}
+.so-0 {left: 432px;top: 951px;z-index: 7;}
+.so-1 {left: 435px;top: 954px;z-index: 6;}
+.so-2 {left: 242px;top: 833px;z-index: 5;}
+.so-3 {left: 194px;top: 1042px;z-index: 4;}
+.so-4 {left: 28px;top: 184px;z-index: 3;}
+.so-5 {left: 591px;top: 1150px;z-index: 2;}
+.so-6 {left: 39px;top: 1140px;z-index: 1;}
+.so-7 {left: 167px;top: 1235px;z-index: 0;}
+</style>

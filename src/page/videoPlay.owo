@@ -1,0 +1,22 @@
+<template lang="pug">
+.video-play
+  video(src="@|video.mp4|" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="landscape" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5")
+</template>
+<script>
+module.exports = {
+  show: function () {
+    const videoItem = this.$el.getElementsByTagName('video')[0]
+    videoItem.play()
+    videoItem.addEventListener("ended", function(){
+      owo.go({noBack: true,page: "name"})
+    })
+  }
+}
+</script>
+<style lang="less">
+.video-play, video {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+</style>
