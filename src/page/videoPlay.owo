@@ -5,10 +5,12 @@
 <script>
 module.exports = {
   show: function () {
+    owo.script.playMusic.pause()
     const videoItem = this.$el.getElementsByTagName('video')[0]
     videoItem.play()
     videoItem.addEventListener("ended", function(){
       owo.go({noBack: true,page: "name"})
+      owo.script.playMusic.play()
     })
   }
 }
@@ -18,5 +20,6 @@ module.exports = {
   display: block;
   width: 100%;
   height: 100%;
+  z-index: 10;
 }
 </style>

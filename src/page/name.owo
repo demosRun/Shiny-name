@@ -1,21 +1,73 @@
 <template lang="pug">
 .name
-  img.so.so-0(src="@|334.png|")
+  img.so.so-0(src="@|334.png|" o-animation="shrink")
   img.so.so-1(src="@|372.png|")
-  img.so.so-2(src="@|373.png|")
+  img.so.so-2#heartBig(src="@|373.png|")
   img.so.so-3(src="@|374.png|")
-  img.so.so-4(src="@|375.png|")
-  img.so.so-5(src="@|325.png|")
+  img.so.so-4(src="@|375.png|" go="videoPlay/////true")
+  img.so.so-5(src="@|325.png|" o-animation="flicker")
   img.so.so-6(src="@|377.png|")
-  img.so.so-7(src="@|320.png|")
+  img.so.so-7(src="@|320.png|" o-animation="shrink" go="page1/////true")
+  //- 点赞人数的文字
+  .fabulous-text
+    plug(_name="scoreboard" _text="" _src="https://template.owo.ink/8823f9ed62bb78eb.owo")
+    .text 人点赞
+  //- 粒子背景效果
+  canvas#canvasBg
 </template>
 <script>
 module.exports = {
+  data: {
+    fabulousNumber: 12457,
+    renderer: null,
+    scene: null,
+    camera: null,
+    // 上一个数字
+    lastNumber: null
+  },
+  created: function () {
+    draw()
+    // this.creatBG()
+    // setTimeout(() => {
+    //   owo.tool.notice('点击屏幕为Ta们点赞!')
+    // }, 1200);
+    // 不断获取点赞信息
+    setInterval(() => {
+      $.ajax({
+        url: 'http://19diaocha.people.cn/20190605/json.php?type=647',
+        dataType: 'jsonp',
+        success: (res) => {
+          if (res[0]) {
+            if (this.data.lastNumber !== res[0].bnum) {
+              this.data.lastNumber = res[0].bnum
+              this.template.scoreboard.changeText(this.data.lastNumber)
+            }
+          }
+        }
+      })
+    }, 2000)
+    this.template.scoreboard.changeText(this.data.fabulousNumber)
+    let heartClock = null
+    owo.tool.heart(this.$el, () => {
+      owo.id.heartBig.classList.add('heart-ani')
+      // 发送点赞请求
+      $.ajax({
+        url: 'http://littlepoll1.people.com.cn/button/index.php/cip/button/647/63229',
+        dataType: 'jsonp'
+      })
+      if (heartClock) clearTimeout(heartClock)
+      heartClock = setTimeout(() => {
+        heartClock = null
+        owo.id.heartBig.classList.remove('heart-ani')
+      }, 1000)
+    })
+  }
 }
 </script>
 <style lang="less">
 .name {
-  background-image: url('@|318.jpg|');
+  // background-image: url('@|318.jpg|');
+  background-color: #0d2846;
 }
 .so {position: absolute;}
 .so-0 {left: 432px;top: 951px;z-index: 7;}
@@ -26,4 +78,35 @@ module.exports = {
 .so-5 {left: 591px;top: 1150px;z-index: 2;}
 .so-6 {left: 39px;top: 1140px;z-index: 1;}
 .so-7 {left: 167px;top: 1235px;z-index: 0;}
+.fabulous-text {
+  position: absolute;
+  color: #fefed0;
+  top: 1071px;
+  font-size: 38px;
+  display: flex;
+  font-weight: bold;
+  line-height: 40px;
+  width: 300px;
+  left: 315px;
+}
+.scoreboard {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+}
+@keyframes heartPlay {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.heart-ani {
+  animation: heartPlay 1s infinite 0s linear;
+}
 </style>

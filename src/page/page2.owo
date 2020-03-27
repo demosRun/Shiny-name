@@ -1,13 +1,31 @@
 <template lang="pug">
 .share
-  img.so.so-0(src="@|249.png|")
+  .so.so-0#showBox
+    img#showImg(src="@|poster-1.jpg|")
+    .text-bar
+      h2 全国42000多名医护人员驰援武汉
+      h2
+        span 共有
+        span#likeNum2 233300
+        span 份敬意献给援鄂医疗队
+  //- 真实显示的图片
+  img.user-show-img#userShowImage
   img.so.so-1(src="@|246.png|" go="page1/////true")
   img.so.so-2(src="@|232.png|")
-  img.so.so-3(src="@|228.png|")
+  img.so.so-3(src="@|228.png|" o-tap="window.location.replace('')")
   img.so.so-4(src="@|273-2.png|")
 </template>
 <script>
 module.exports = {
+  show: function () {
+    owo.id.likeNum2.innerText = owo.script.name.data.lastNumber || 514273
+    owo.id.userShowImage.src = ''
+    setTimeout(() => {
+      html2canvas(owo.id.showBox).then(function(canvas) {
+        owo.id.userShowImage.src = canvas.toDataURL("image/png")
+      })
+    }, 800);
+  }
 }
 </script>
 <style lang="less">
@@ -15,7 +33,35 @@ module.exports = {
   background-image: url('@|page-1.jpg|');
 }
 .so {position: absolute;}
-.so-0 {left: 91px;top: 209px;z-index: 4}
+.so-0 {
+  left: 91px;
+  top: 209px;
+  z-index: 4;
+  width: 570px;
+  height: 1020px;
+  #showImg {
+    width: 100%;
+    height: 100%;
+  }
+  .text-bar {
+    color: white;
+    font-size: 8px;
+    line-height: 40px;
+    bottom: 50px;
+    position: absolute;
+    left: 15px;
+    width: 440px;
+    letter-spacing: 12px;
+  }
+}
+.user-show-img {
+  left: 91px;
+  top: 209px;
+  z-index: 8;
+  width: 570px;
+  height: 1020px;
+  position: absolute;
+}
 .so-1 {left: 286px;top: 1272px;z-index: 3}
 .so-2 {left: 482px;top: 1273px;z-index: 2}
 .so-3 {left: 91px;top: 1273px;z-index: 1}

@@ -85,6 +85,42 @@
 		{
 			"name": "autoScale",
 			"src": "https://cunchu.site/owo/plug/autoScale.js"
+		},
+		{
+			"name": "heart.js",
+			"src": "./owo_modules/heart.js",
+			"afterbody": true
+		},
+		{
+			"name": "html2canvas.min.js",
+			"src": "./src/resource/html2canvas.min.js",
+			"afterbody": true
+		},
+		{
+			"name": "toast.js",
+			"src": "./owo_modules/toast.js",
+			"afterbody": true
+		},
+		{
+			"name": "notice.js",
+			"src": "./owo_modules/notice.js",
+			"afterbody": true
+		},
+		{
+			"name": "three.min.js",
+			"src": "http://politics.people.com.cn/img/MAIN/2019/08/119609/js/three.min.js",
+			"afterbody": true
+		},
+		{
+			"name": "STLLoader.js",
+			"src": "./src/resource/STLLoader.js",
+			"afterbody": true
+		},
+		{
+			"name": "pointCloud.js",
+			"src": "./src/pointCloud.js",
+			"afterbody": true,
+			"resource": true
 		}
 	],
 	"styleList": [
@@ -119,6 +155,11 @@
 			"name": "page2",
 			"src": "/src/page/page2.owo",
 			"type": "page"
+		},
+		{
+			"name": "playMusic",
+			"src": "https://template.owo.ink/947eded0f03783ad.owo",
+			"type": "block"
 		}
 	],
 	"mode": {
@@ -155,5 +196,11 @@
 			},
 			"startAtHome": true
 		}
+	},
+	"globalAni": {
+		"in": "moveToLeftFade",
+		"out": "moveFromRightFade",
+		"backIn": "moveToRightFade",
+		"backOut": "moveFromLeftFade"
 	}
 }

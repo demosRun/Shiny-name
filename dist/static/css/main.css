@@ -6,7 +6,8 @@ body, html {
   height: 100vh;
   overflow: hidden;
   user-select: text;
-  font: normal 12px/180% "SimSun";
+  font-size: 14px;
+  font-family: 'pingfang SC','helvetica neue',arial,'hiragino sans gb','microsoft yahei ui','microsoft yahei','simsun',sans-serif;
   -webkit-overflow-scrolling: touch;
   position: relative;
 }
