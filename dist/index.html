@@ -1,292 +1,435 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-  <head>
-    <title>{TAG_14226_TAG}</title>
-    <!-- 页面的元信息 -->
-    <meta http-equiv="content-type" content="text/html; charset=UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no"/>
-    <meta name="format-detection" content="telephone=no, email=no"/>
-    <meta name="apple-mobile-web-app-capable" content="yes"/>
-    <meta name="apple-mobile-web-app-status-bar-style" content="white"/>
-    <meta name="renderer" content="webkit"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-    <meta name="filetype" content="1"/>
-    <meta name="publishedtype" content="1"/>
-    <meta name="pagetype" content="2"/>
-    <meta name="screen-orientation" content="landscape"/>
-    <meta name="x5-orientation" content="landscape"/>
-    <meta name="full-screen" content="yes"/>
-    <meta name="x5-fullscreen" content="true"/>
-    <meta name="browsermode" content="application"/>
-    <meta name="x5-page-mode" content="app"/>
-    
-      <!-- 页面主样式文件 -->
-      <link charset="utf-8"  rel="stylesheet" href="./static/css/owo.core.css">
-      
-    <!-- 附属css文件 -->
-    <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
-      
-  </head>
-  <body>
-    <div class="scale-box"><!-- 页面区域 -->
+
+<head>
+  <title>{TAG_14226_TAG}</title>
+  <!-- 页面的元信息 -->
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no, email=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="white" />
+  <meta name="renderer" content="webkit" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="filetype" content="1" />
+  <meta name="publishedtype" content="1" />
+  <meta name="pagetype" content="2" />
+  <meta name="screen-orientation" content="landscape" />
+  <meta name="x5-orientation" content="landscape" />
+  <meta name="full-screen" content="yes" />
+  <meta name="x5-fullscreen" content="true" />
+  <meta name="browsermode" content="application" />
+  <meta name="x5-page-mode" content="app" />
+
+  <!-- 页面主样式文件 -->
+  <link charset="utf-8" rel="stylesheet" href="./static/css/owo.core.css">
+
+  <!-- 附属css文件 -->
+  <link rel="stylesheet" href="./static/css/main.css" charset="utf-8">
+
+</head>
+
+<body>
+  <div class="scale-box">
+    <!-- 页面区域 -->
     <!-- 页面[loading]-->
-    <div class="loading-box page" template="loading" style="display: none;"><img class="loading owo-animation-shrink" src="./static/resource/loadingLogo.png" o-animation="shrink" o-tap="owo.go({noBack: true,page: 'videoPlay'})"><div class="loading-bar"><div class="num-bar"></div></div><div class="num">0%</div><img class="play-button" src="./static/resource/play.png" go="videoPlay/////true"></div>
+    <div class="loading-box page" template="loading" style="display: none;">
+      <img class="loading owo-animation-shrink" src="./static/resource/loadingLogo.png" o-animation="shrink" o-tap="owo.go({noBack: true,page: 'videoPlay'})">
+      <div class="loading-bar">
+        <div class="num-bar"></div>
+      </div>
+      <div class="num">0%</div>
+      <img class="play-button" src="./static/resource/play.png" go="videoPlay/////true">
+    </div>
     <!-- 页面[videoPlay]-->
-    <div class="video-play page" template="videoPlay" style="display: none;"><video src="./static/resource/video.mp4" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="landscape" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5"></video></div>
+    <div class="video-play page" template="videoPlay" style="display: none;">
+      <video src="./static/resource/video.mp4" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="landscape" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5"></video>
+    </div>
     <!-- 页面[name]-->
-    <div class="name page" template="name" style="display: none;"><img class="so so-0 owo-animation-shrink" src="./static/resource/334.png" o-animation="shrink"><img class="so so-1" src="./static/resource/372.png"><img class="so so-2" id="heartBig" src="./static/resource/373.png"><img class="so so-3" src="./static/resource/374.png"><img class="so so-4" src="./static/resource/375.png" go="videoPlay/////true"><img class="so so-5 owo-animation-flicker" src="./static/resource/325.png" o-animation="flicker"><img class="so so-6" src="./static/resource/377.png"><img class="so so-7 owo-animation-shrink" src="./static/resource/320.png" o-animation="shrink" go="page1/////true"><div class="fabulous-text"><div class="scoreboard" template="scoreboard"><div class="scoreboard-item"> </div></div><div class="text">人点赞</div></div><canvas id="canvasBg"></canvas><div class="doc doc-1" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-2" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-3" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-4" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-5" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-6" style="left: 300px;top: 567px;">测试名</div></div>
+    <div class="name page" template="name" style="display: none;">
+      <img class="so so-0 owo-animation-shrink" src="./static/resource/334.png" o-animation="shrink">
+      <img class="so so-1" src="./static/resource/372.png">
+      <img class="so so-2" id="heartBig" src="./static/resource/373.png">
+      <img class="so so-3" src="./static/resource/374.png">
+      <img class="so so-4" src="./static/resource/375.png" go="videoPlay/////true">
+      <img class="so so-5 owo-animation-flicker" src="./static/resource/325.png" o-animation="flicker">
+      <img class="so so-6" src="./static/resource/377.png">
+      <img class="so so-7 owo-animation-shrink" src="./static/resource/320.png" o-animation="shrink" go="page1/////true">
+      <div class="fabulous-text">
+        <div class="scoreboard" template="scoreboard">
+          <div class="scoreboard-item"> </div>
+        </div>
+        <div class="text">人点赞</div>
+      </div><canvas id="canvasBg"></canvas>
+      <div class="doc doc-1" style="left: 300px;top: 567px;">测试名</div>
+      <div class="doc doc-2" style="left: 300px;top: 567px;">测试名</div>
+      <div class="doc doc-3" style="left: 300px;top: 567px;">测试名</div>
+      <div class="doc doc-4" style="left: 300px;top: 567px;">测试名</div>
+      <div class="doc doc-5" style="left: 300px;top: 567px;">测试名</div>
+      <div class="doc doc-6" style="left: 300px;top: 567px;">测试名</div><!-- 当前城市显示-->
+      <div class="cityNow"></div>
+    </div>
     <!-- 页面[page1]-->
-    <div class="page-1 page" template="page1" style="display: none;"><img class="so so-2" src="./static/resource/202.png"><img class="so so-3" src="./static/resource/275.png"><img class="so so-4" src="./static/resource/200.png" go="page2/////true"><img class="so so-5" src="./static/resource/196.png" go="name/////true"><img class="so so-6" src="./static/resource/276.png"><img class="so so-7" src="./static/resource/277.png"><img class="so so-8" src="./static/resource/189.png"><img class="so so-9" src="./static/resource/188.png"><select class="select-bar" o-change="changeSelect"><option value="./static/resource/poster-1.jpg">这声“美女”，不是恭维</option><option value="./static/resource/poster-2.jpg">坚持就是胜利，曙光就在前方</option><option value="./static/resource/poster-3.jpg">谢谢你为湖北拼过命</option><option value="./static/resource/poster-4.jpg">这是期待已久的道别</option><option value="./static/resource/poster-5.jpg">昨日逆行武汉，今朝胜利凯旋</option><option value="./static/resource/poster-6.jpg">“过水门”，为回家的英雄们接风洗尘</option></select><div class="go-number"><span>全国</span><span id="goNum">42000</span><span>多名医护人员驰援武汉</span></div><div class="like-number"><span>共有</span><span id="likeNum">2324212</span><span>份敬意献给援鄂医疗队</span></div></div>
+    <div class="page-1 page" template="page1" style="display: none;">
+      <img class="so so-2" src="./static/resource/202.png">
+      <img class="so so-3" src="./static/resource/275.png">
+      <img class="so so-4" src="./static/resource/200.png" go="page2/////true">
+      <img class="so so-5" src="./static/resource/196.png" go="name/////true">
+      <img class="so so-6" src="./static/resource/276.png">
+      <img class="so so-7" src="./static/resource/277.png">
+      <img class="so so-8" src="./static/resource/189.png">
+      <img class="so so-9" src="./static/resource/188.png">
+      <select class="select-bar" o-change="changeSelect">
+        <option value="./static/resource/poster-1.jpg">这声“美女”，不是恭维</option>
+        <option value="./static/resource/poster-2.jpg">坚持就是胜利，曙光就在前方</option>
+        <option value="./static/resource/poster-3.jpg">谢谢你为湖北拼过命</option>
+        <option value="./static/resource/poster-4.jpg">这是期待已久的道别</option>
+        <option value="./static/resource/poster-5.jpg">昨日逆行武汉，今朝胜利凯旋</option>
+        <option value="./static/resource/poster-6.jpg">“过水门”，为回家的英雄们接风洗尘</option>
+      </select>
+      <div class="go-number">
+        <span>全国</span>
+        <span id="goNum">42000</span>
+        <span>多名医护人员驰援武汉</span>
+      </div>
+      <div class="like-number">
+        <span>共有</span>
+        <span id="likeNum">2324212</span>
+        <span>份敬意献给援鄂医疗队</span>
+      </div>
+    </div>
     <!-- 页面[page2]-->
-    <div class="share page" template="page2" style="display: none;"><div class="so so-0" id="showBox"><img id="showImg" src="./static/resource/poster-1.jpg"><div class="text-bar"><h2>全国42000多名医护人员驰援武汉</h2><h2><span>共有</span><span id="likeNum2">233300</span><span>份敬意献给援鄂医疗队</span></h2></div></div><img class="user-show-img" id="userShowImage"><img class="so so-1" src="./static/resource/246.png" go="page1/////true"><img class="so so-2" src="./static/resource/232.png"><img class="so so-3" src="./static/resource/228.png" o-tap="window.location.replace('')"><img class="so so-4" src="./static/resource/273-2.png"></div>
+    <div class="share page" template="page2" style="display: none;">
+      <div class="so so-0" id="showBox">
+        <img id="showImg" src="./static/resource/poster-1.jpg">
+        <div class="text-bar">
+          <h2>全国42000多名医护人员驰援武汉</h2>
+          <h2>
+            <span>共有</span>
+            <span id="likeNum2">233300</span>
+            <span>份敬意献给援鄂医疗队</span>
+          </h2>
+        </div>
+      </div>
+      <img class="user-show-img" id="userShowImage">
+      <img class="so so-1" src="./static/resource/246.png" go="page1/////true">
+      <img class="so so-2" src="./static/resource/232.png">
+      <img class="so so-3" src="./static/resource/228.png" o-tap="window.location.replace('')">
+      <img class="so so-4" src="./static/resource/273-2.png">
+    </div>
     <!-- 页面[playMusic]-->
-    <div class="music-menu owo-block" template="playMusic" style="display: none;"><img class="music-icon" src="https://cunchu.site/ozzx/resource/music.png" o-tap="switchPlay"></div></div>
-    
+    <div class="music-menu owo-block" template="playMusic" style="display: none;">
+      <img class="music-icon" src="https://cunchu.site/ozzx/resource/music.png" o-tap="switchPlay">
+    </div>
+  </div>
 
-    <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/main.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript"  charset="UTF-8"></script>
-    <!-- 框架script文件 -->
-    <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
-<script>
-owo.script = {
-  "loading": {
-    "data": {
-      "imgList": [""]
-    },
-    "show": function show() {
-      var mum = owo.query('.num')[0];
-      var numBar = owo.query('.num-bar')[0];
-      this.preloadImages(this.data.imgList, function (e) {
-        setTimeout(function () {
-          owo.query('.play-button')[0].style.display = 'block';
-        }, 500);
-      }, function (num) {
-        numBar.style.width = num + '%';
-        mum.innerHTML = num + '%';
-      });
-    },
-    "preloadImage": function preloadImage(src, successFn) {
-      var image = new Image();
-      image.src = src;
 
-      image.onload = function () {
-        successFn && successFn(src);
-      };
-
-      image.onerror = function (error) {
-        successFn && successFn(src);
-      };
-    },
-    "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
-      var _this = this;
-
-      if (!Array.isArray(srcs)) {
-        console.log('第一个参数只能是一个数组');
-      } else {
-        var allCount = srcs.length;
-        var doneCount = 0;
-        srcs.forEach(function (srcItem) {
-          _this.preloadImage(srcItem, function () {
-            doneCount++;
-            progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
-
-            if (doneCount === allCount) {
-              doneFn && doneFn();
-            }
-          });
-        });
-      }
-    }
-  },
-  "videoPlay": {
-    "show": function show() {
-      owo.script.playMusic.pause();
-      var videoItem = this.$el.getElementsByTagName('video')[0];
-      videoItem.play();
-      videoItem.addEventListener("ended", function () {
-        owo.go({
-          noBack: true,
-          page: "name"
-        });
-        owo.script.playMusic.play();
-      });
-    }
-  },
-  "name": {
-    "data": {
-      "fabulousNumber": 12457,
-      "renderer": null,
-      "scene": null,
-      "camera": null,
-      "lastNumber": null,
-      "peopleList": {
-        "安徽": ["汪天平", "邵东华", "张秀平", "谢少清", "蔡朝阳", "徐晶晶", "尚培培", "何敏", "张硕", "阮雪娇", "白璐", "刘媛", "贾畅", "谢伟伟", "王新", "侯青庆", "陈月婷", "朱大杰", "刘璟", "范婷婷", "吴齐兵", "王建明", "刘允化", "刘洁", "张永顺", "李建桥", "吴运虎", "徐晓中", "徐欢", "卢杰"]
-      }
-    },
-    "created": function created() {
-      var _this2 = this;
-
-      draw(); // 不断获取点赞信息
-
-      setInterval(function () {
-        $.ajax({
-          url: 'http://19diaocha.people.cn/20190605/json.php?type=647',
-          dataType: 'jsonp',
-          success: function success(res) {
-            if (res[0]) {
-              if (_this2.data.lastNumber !== res[0].bnum) {
-                _this2.data.lastNumber = res[0].bnum;
-
-                _this2.template.scoreboard.changeText(_this2.data.lastNumber);
-              }
-            }
-          }
-        });
-      }, 2000);
-      this.template.scoreboard.changeText(this.data.fabulousNumber);
-      var heartClock = null;
-      owo.tool.heart(this.$el, function () {
-        owo.id.heartBig.classList.add('heart-ani'); // 发送点赞请求
-
-        $.ajax({
-          url: 'http://littlepoll1.people.com.cn/button/index.php/cip/button/647/63229',
-          dataType: 'jsonp'
-        });
-        if (heartClock) clearTimeout(heartClock);
-        heartClock = setTimeout(function () {
-          heartClock = null;
-          owo.id.heartBig.classList.remove('heart-ani');
-        }, 1000);
-      });
-      var peopleList = randomGet(this.data.peopleList['安徽'], 6);
-      var showDomList = owo.query('.doc');
-
-      for (var index = 0; index < peopleList.length; index++) {
-        var element = peopleList[index];
-        showDomList[index].innerText = element;
-      }
-
-      setTimeout(function () {
-        _this2.creatPeople();
-      }, 600); // 获取随机一个城市
-    },
-    "creatPeople": function creatPeople() {
-      peopleList = owo.query('.doc');
-
-      var _loop = function _loop(index) {
-        var element = peopleList[index];
-        setTimeout(function () {
-          element.style.left = '';
-          element.style.top = '';
-          element.style.opacity = 1;
-        }, index * 200);
-      };
-
-      for (var index = 0; index < peopleList.length; index++) {
-        _loop(index);
-      }
-    },
-    "template": {
-      "scoreboard": {
+  <script src="http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="./static/js/main.js" type="text/javascript" charset="UTF-8"></script>
+  <script src="https://cunchu.site/owo/plug/autoScale.js" type="text/javascript" charset="UTF-8"></script>
+  <!-- 框架script文件 -->
+  <script src="./static/js/owo.core.js" type="text/javascript" charset="UTF-8"></script>
+  <script>
+    owo.script = {
+      "loading": {
         "data": {
-          "changing": false
+          "imgList": [""]
         },
-        "changeText": function changeText(text) {
+        "show": function show() {
+          var mum = owo.query('.num')[0];
+          var numBar = owo.query('.num-bar')[0];
+          this.preloadImages(this.data.imgList, function(e) {
+            setTimeout(function() {
+              owo.query('.play-button')[0].style.display = 'block';
+            }, 500);
+          }, function(num) {
+            numBar.style.width = num + '%';
+            mum.innerHTML = num + '%';
+          });
+        },
+        "preloadImage": function preloadImage(src, successFn) {
+          var image = new Image();
+          image.src = src;
+
+          image.onload = function() {
+            successFn && successFn(src);
+          };
+
+          image.onerror = function(error) {
+            successFn && successFn(src);
+          };
+        },
+        "preloadImages": function preloadImages(srcs, doneFn, progressFn) {
+          var _this = this;
+
+          if (!Array.isArray(srcs)) {
+            console.log('第一个参数只能是一个数组');
+          } else {
+            var allCount = srcs.length;
+            var doneCount = 0;
+            srcs.forEach(function(srcItem) {
+              _this.preloadImage(srcItem, function() {
+                doneCount++;
+                progressFn && progressFn(Math.ceil(100 * doneCount / allCount));
+
+                if (doneCount === allCount) {
+                  doneFn && doneFn();
+                }
+              });
+            });
+          }
+        }
+      },
+      "videoPlay": {
+        "show": function show() {
+          owo.script.playMusic.pause();
+          var videoItem = this.$el.getElementsByTagName('video')[0];
+          videoItem.play();
+          videoItem.addEventListener("ended", function() {
+            owo.go({
+              noBack: true,
+              page: "name"
+            });
+            owo.script.playMusic.play();
+          });
+        }
+      },
+      "name": {
+        "data": {
+          "fabulousNumber": 12457,
+          "renderer": null,
+          "scene": null,
+          "camera": null,
+          "canChange": true,
+          "lastNumber": null,
+          "peopleList": {
+            "安徽": ["汪天平", "邵东华", "张秀平", "谢少清", "蔡朝阳", "徐晶晶", "尚培培", "何敏", "张硕", "阮雪娇", "白璐", "刘媛", "贾畅", "谢伟伟", "王新", "侯青庆", "陈月婷", "朱大杰", "刘璟", "范婷婷", "吴齐兵", "王建明", "刘允化", "刘洁", "张永顺", "李建桥", "吴运虎", "徐晓中", "徐欢", "卢杰"],
+            "福建": ["宁永鑫", "林世丹", "林璇", "林晟", "魏硕", "黄拔威", "胡颖", "罗建雄", "郑艳", "林瑜", "郭锦", "沈层层", "郑增华", "林航瑾", "黄燕珍", "林守虹", "李碧霞", "蓝钰菱", "洪丽北", "陈晓颖", "黄惠", "陈传娟", "高晶", "董莉莉", "黄碧霞", "钱欣", "叶诚栋", "孙昕", "陈凝", "陈玉芳"],
+            "广东": ["易学锋", "陈平", "王宗枫", "马晓军", "罗少华", "张忠德", "刘秋江", "王同汉", "赵海方", "陈垚", "姚麟", "胡浩", "黄云卿", "胡杨", "赵莹", "陈秋霞", "肖红", "方苓", "孙长云", "孙文昊", "张挪富", "徐远达", "黄敬烨", "席寅", "刘川", "陈经雕", "何翔", "庄雪", "冯锐谭", "钟仕欢"],
+            "贵州": ["金海燕", "陈莉", "黄英", "邓正琼", "高海", "李丹", "成波", "冯秀兰", "苟春林", "黄菊娜", "季桂安", "陈璐", "陈应华", "兰远波", "刘胜", "李兰", "李春红", "胡达云", "黄海", "黄茜茜", "鲍安梅", "蔡松敏", "曾洪梅", "曾伦丽", "陈丽", "车宣敏", "陈川", "陈东", "杜帅", "高珊珊"],
+            "黑龙江": ["焦军东", "张丙才", "于世寰", "韦南", "贾莉", "田振榆", "许名妍", "肖蓉儿", "赵晓琳", "王晨羽", "张馨", "郝谦依", "朱寰", "张可娇", "张海薇", "武立刚", "张东海", "刘旭之", "李鹏", "曲延章", "杨磊", "王文斌", "顾泽鑫", "苍春阳", "董枫", "牟海军", "姜云飞", "董忱忱", "漆毅", "黑炳昌"],
+            "湖南": ["高纪平", "朱华波", "刘毅", "谭英征", "梁彦超", "罗细萍", "熊佳丽", "彭丽华", "朱娟玲", "谢建梅", "付艳萍", "陈娜", "王嘉铭", "邓建斌", "李锐", "欧飞宇", "郭希", "向毅", "焦海禄", "姚承明", "姚专", "任玉钢", "吴志红", "王菊花", "邱亿", "邓玲金", "周琴", "吴佩芬", "汪勇", "胡学兵"],
+            "江苏": ["邱泽森", "任晓波", "顾寿永", "吴伟", "王宁", "卢爱明", "葛宁海", "汤苏川", "陆敏", "吴红辉", "汪海波", "吴苏凌", "戴德", "张小凡", "秦湧", "陶连姗", "李彦玲", "朱云鸿", "吴卫娟", "孙立群", "蒋华", "邵龙刚", "张海东", "黄宝驹", "陈浩", "周游", "朱成华", "朱玲", "胡星星", "朱小涵"],
+            "辽宁": ["焦龙友", "梁宏军", "杨泽辉", "郭洪亮", "汪海源", "蓝涛", "李晶", "陈亮", "方丽卉", "陈娜", "丁仁彧", "尹超", "乔璋晓", "马旭", "李良", "王鑫", "殷彭", "尹方", "张宇", "贾佳", "张旭", "崇巍", "侯刚", "才权", "贾子毅", "李学渊", "孙喜家", "张东勇", "邓明涵", "吕鹏"],
+            "山西": ["张晓清", "王军红", "原大江", "王俊平", "李晋", "王秀哲", "郭焱", "刘毅", "杨立明", "李晶", "弓清梅", "王晓凝", "张朝华", "杨晓静", "乔爱春", "杜艺", "翟艳萍", "陈素清", "郑洁", "栗林", "李学文", "郝斌", "闫新明", "李智", "李萍", "郑磊", "石海鹏", "黄润虎", "王晓君", "单张涛"],
+            "上海": ["干依婷", "马杰飞", "马国光", "王汉超", "王青青", "王宜赟", "王春灵", "王喆", "毛佳健", "方贤丰", "左梦颖", "叶伶", "叶君", "叶茂松", "印敏", "丁百兴", "万亿", "卫尹", "卫慧", "马昕", "马珏萍", "王冬艳", "王欢欢", "王兵", "王雨佳", "王佳", "王昳丽", "王倩露", "王烨", "王银辉"],
+            "四川": ["乔甫", "卢云", "陈萍", "朱仕超", "罗凤鸣", "王业", "王博", "刘焱斌", "尹万红", "冯梅", "张焱林", "宋志芳", "何国庆", "张耀之", "谢莉", "江雪", "银玲", "冯佩璐", "蔡琳", "漆贵华", "吴孝文", "彭云耀", "张茂杰", "向钱", "李刚", "陈庆", "周雨田", "朱江", "黄仁刚", "黄晓波", "邓磊", "刘蓉安", "贺宏丽"],
+            "天津": ["张伯礼", "杨丰文", "黄明", "陆伟", "路佳", "刘蕊", "吕扬", "张涛", "李永亮", "林春光", "赵宝伟", "苑沛然", "申文杰", "孙志萍", "王玥", "王莹", "赵学群", "李寅", "杨敏", "宋洲洋", "刘辉", "魏嵩昀", "戴华荣", "贾锐", "李松松", "周焕丽", "李妍", "苏毅", "刘富康", "马广艳", "贯筱琳", "赵珊", "李智伯"],
+            "浙江": ["陆群", "吴红梅", "曹启峰", "徐飞鸿", "胡伟航", "任奇", "王艳红", "汪佶", "杨向红", "谢邦好", "金莹", "陈美娟", "张婧", "凌磊", "徐明", "陈彦洁", "吕玲玲", "郑霞", "喻成波", "马青娜", "刘烨", "符一骐", "陈城洋", "颜伏归", "赵伟", "吴学杰", "卢燕", "陈岳亮", "董凌峰", "吴晓虹"],
+            "重庆": ["陈垦", "潘传波", "唐远航", "石任重", "刘煜亮", "张为华", "章述军", "杨丽", "白阳", "蒋磊", "张晞", "吴林娟", "梁娟", "徐娟", "朱莎莎", "陈茜", "周璐", "吴豪杰", "李娟", "谭丽", "王世纯", "郑向鹏", "赖晓东", "杜先智", "黄文祺", "王勤", "杨帅", "符跃强", "姚勇刚", "鲁力"]
+          }
+        },
+        "created": function created() {
+          var _this2 = this;
+
+          draw(); // 不断获取点赞信息
+
+          setInterval(function() {
+            $.ajax({
+              url: 'http://19diaocha.people.cn/20190605/json.php?type=647',
+              dataType: 'jsonp',
+              success: function success(res) {
+                if (res[0]) {
+                  if (_this2.data.lastNumber !== res[0].bnum) {
+                    _this2.data.lastNumber = res[0].bnum;
+
+                    _this2.template.scoreboard.changeText(_this2.data.lastNumber);
+                  }
+                }
+              }
+            });
+          }, 2000);
+          this.template.scoreboard.changeText(this.data.fabulousNumber);
+          var heartClock = null;
+          owo.tool.heart(this.$el, function() {
+            owo.id.heartBig.classList.add('heart-ani'); // 发送点赞请求
+
+            $.ajax({
+              url: 'http://littlepoll1.people.com.cn/button/index.php/cip/button/647/63229',
+              dataType: 'jsonp'
+            });
+
+            _this2.heartChange();
+
+            if (heartClock) clearTimeout(heartClock);
+            heartClock = setTimeout(function() {
+              heartClock = null;
+              owo.id.heartBig.classList.remove('heart-ani');
+            }, 1000);
+          });
+          this.changePepople();
+          setTimeout(function() {
+            _this2.creatPeople();
+          }, 600); // 获取随机一个城市
+        },
+        "creatPeople": function creatPeople() {
+          var peopleList = owo.query('.doc');
+
+          var _loop = function _loop(index) {
+            var element = peopleList[index];
+            setTimeout(function() {
+              element.style.left = '';
+              element.style.top = '';
+              element.style.opacity = 1;
+            }, index * 200);
+          };
+
+          for (var index = 0; index < peopleList.length; index++) {
+            _loop(index);
+          }
+        },
+        "disPeople": function disPeople() {
+          var peopleList = owo.query('.doc');
+
+          var _loop2 = function _loop2(index) {
+            var element = peopleList[index];
+            setTimeout(function() {
+              element.style.left = '300px';
+              element.style.top = '567px';
+              element.style.opacity = 0;
+            }, index * 100);
+          };
+
+          for (var index = 0; index < peopleList.length; index++) {
+            _loop2(index);
+          }
+        },
+        "heartChange": function heartChange() {
           var _this3 = this;
 
-          // 限制刷新频率
-          if (this.data.changing) return;
-          var firstChild = this.$el.children[0];
-          this.data.changing = true;
-          var newEl = document.createElement('div');
-          newEl.classList.add('scoreboard-item');
-          newEl.innerHTML = text;
-          this.$el.appendChild(newEl);
-          newEl.style.top = "40px";
-          setTimeout(function () {
-            firstChild.style.top = "-40px";
-            newEl.style.top = "0";
-            setTimeout(function () {
-              firstChild.remove();
-              _this3.data.changing = false;
-            }, 500);
-          }, 100);
+          if (!this.data.canChange) return;
+          this.disPeople();
+          setTimeout(function() {
+            _this3.changePepople();
+
+            setTimeout(function() {
+              _this3.creatPeople();
+            }, 600);
+          }, 1000);
+        },
+        "changePepople": function changePepople() {
+          var _this4 = this;
+
+          if (!this.data.canChange) return;
+          console.log('改变显示人物');
+          this.data.canChange = false;
+          var randomCity = randomGet(Object.keys(this.data.peopleList), 1);
+          owo.query('.cityNow')[0].innerText = randomCity;
+          console.log(randomCity);
+          var peopleList = randomGet(this.data.peopleList[randomCity], 6);
+          var showDomList = owo.query('.doc');
+
+          for (var index = 0; index < peopleList.length; index++) {
+            var element = peopleList[index];
+            showDomList[index].innerText = element;
+          }
+
+          setTimeout(function() {
+            _this4.data.canChange = true;
+          }, 2000);
+        },
+        "template": {
+          "scoreboard": {
+            "data": {
+              "changing": false
+            },
+            "changeText": function changeText(text) {
+              var _this5 = this;
+
+              // 限制刷新频率
+              if (this.data.changing) return;
+              var firstChild = this.$el.children[0];
+              this.data.changing = true;
+              var newEl = document.createElement('div');
+              newEl.classList.add('scoreboard-item');
+              newEl.innerHTML = text;
+              this.$el.appendChild(newEl);
+              newEl.style.top = "40px";
+              setTimeout(function() {
+                firstChild.style.top = "-40px";
+                newEl.style.top = "0";
+                setTimeout(function() {
+                  firstChild.remove();
+                  _this5.data.changing = false;
+                }, 500);
+              }, 100);
+            }
+          }
+        }
+      },
+      "page1": {
+        "created": function created() {
+          owo.id.likeNum.innerText = owo.script.name.data.lastNumber || 514273;
+          owo.tool.toast('下拉框可以选择致敬的内容');
+          owo.animate('fadeInLeft', owo.query('.so-3')[0]);
+        },
+        "changeSelect": function changeSelect() {
+          var value = this.$target.value;
+
+          if (value && owo.id.showImg) {
+            owo.id.showImg.src = value;
+          }
+        }
+      },
+      "page2": {
+        "show": function show() {
+          owo.id.likeNum2.innerText = owo.script.name.data.lastNumber || 514273;
+          owo.id.userShowImage.src = '';
+          setTimeout(function() {
+            html2canvas(owo.id.showBox).then(function(canvas) {
+              owo.id.userShowImage.src = canvas.toDataURL("image/png");
+            });
+          }, 800);
+        }
+      },
+      "playMusic": {
+        "data": {
+          "music": null,
+          "musicIsPlay": false
+        },
+        "switchPlay": function switchPlay() {
+          this.data.musicIsPlay ? this.pause() : this.play();
+        },
+        "play": function play() {
+          console.log('播放音乐');
+
+          if (!this.data.musicIsPlay) {
+            this.data.musicIsPlay = true;
+            this.data.music = new Audio("https://cunchu.site/ozzx/resource/bg.mp3"); // this.data.music.volume = 0.2
+
+            this.data.music.loop = true;
+            this.data.music.play();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.src = 'https://cunchu.site/ozzx/resource/music.png';
+            icon.classList.add('active');
+          }
+        },
+        "pause": function pause() {
+          if (this.data.musicIsPlay) {
+            this.data.musicIsPlay = false;
+            this.data.music.pause();
+            var icon = document.getElementsByClassName('music-icon')[0];
+            icon.src = 'https://cunchu.site/ozzx/resource/music.png';
+            icon.classList.remove('active');
+          }
         }
       }
-    }
-  },
-  "page1": {
-    "created": function created() {
-      owo.id.likeNum.innerText = owo.script.name.data.lastNumber || 514273;
-      owo.tool.toast('下拉框可以选择致敬的内容');
-      owo.animate('fadeInLeft', owo.query('.so-3')[0]);
-    },
-    "changeSelect": function changeSelect() {
-      var value = this.$target.value;
+    };
+    owo.globalAni = {
+      "in": "moveToLeftFade",
+      "out": "moveFromRightFade",
+      "backIn": "moveToRightFade",
+      "backOut": "moveFromLeftFade"
+    };
+  </script>
+</body>
 
-      if (value && owo.id.showImg) {
-        owo.id.showImg.src = value;
-      }
-    }
-  },
-  "page2": {
-    "show": function show() {
-      owo.id.likeNum2.innerText = owo.script.name.data.lastNumber || 514273;
-      owo.id.userShowImage.src = '';
-      setTimeout(function () {
-        html2canvas(owo.id.showBox).then(function (canvas) {
-          owo.id.userShowImage.src = canvas.toDataURL("image/png");
-        });
-      }, 800);
-    }
-  },
-  "playMusic": {
-    "data": {
-      "music": null,
-      "musicIsPlay": false
-    },
-    "switchPlay": function switchPlay() {
-      this.data.musicIsPlay ? this.pause() : this.play();
-    },
-    "play": function play() {
-      console.log('播放音乐');
-
-      if (!this.data.musicIsPlay) {
-        this.data.musicIsPlay = true;
-        this.data.music = new Audio("https://cunchu.site/ozzx/resource/bg.mp3"); // this.data.music.volume = 0.2
-
-        this.data.music.loop = true;
-        this.data.music.play();
-        var icon = document.getElementsByClassName('music-icon')[0];
-        icon.src = 'https://cunchu.site/ozzx/resource/music.png';
-        icon.classList.add('active');
-      }
-    },
-    "pause": function pause() {
-      if (this.data.musicIsPlay) {
-        this.data.musicIsPlay = false;
-        this.data.music.pause();
-        var icon = document.getElementsByClassName('music-icon')[0];
-        icon.src = 'https://cunchu.site/ozzx/resource/music.png';
-        icon.classList.remove('active');
-      }
-    }
-  }
-};
-owo.globalAni = {
-  "in": "moveToLeftFade",
-  "out": "moveFromRightFade",
-  "backIn": "moveToRightFade",
-  "backOut": "moveFromLeftFade"
-};</script>
-  </body>
 </html>
 
-    <script src="./static/js/heart.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/html2canvas.min.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/toast.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/notice.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="http://politics.people.com.cn/img/MAIN/2019/08/119609/js/three.min.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/pointCloud.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/randomNum.js.js" type="text/javascript"  charset="UTF-8"></script>
+<script src="./static/js/heart.js.js" type="text/javascript" charset="UTF-8"></script>
+<script src="./static/js/html2canvas.min.js.js" type="text/javascript" charset="UTF-8"></script>
+<script src="./static/js/toast.js.js" type="text/javascript" charset="UTF-8"></script>
+<script src="./static/js/notice.js.js" type="text/javascript" charset="UTF-8"></script>
+<script src="http://politics.people.com.cn/img/MAIN/2019/08/119609/js/three.min.js" type="text/javascript" charset="UTF-8"></script>
+<script src="./static/js/pointCloud.js.js" type="text/javascript" charset="UTF-8"></script>
+<script src="./static/js/randomNum.js.js" type="text/javascript" charset="UTF-8"></script>

@@ -1,4 +1,4 @@
-// Sun Mar 29 2020 21:48:09 GMT+0800 (GMT+08:00)
+// Sun Mar 29 2020 23:22:53 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {}
@@ -619,6 +619,11 @@ _owo.showPage = function() {
   // 取出URL地址判断当前所在页面
   var pageArg = _owo.getarg(window.location.hash)
   
+  if (pageArg !== null) {
+    window.location.href = ''
+    return
+  }
+  
   
 
   // 从配置项中取出程序入口
@@ -740,21 +745,4 @@ if(/iPhone\sOS.*QQ[^B]/.test(navigator.userAgent)) {window.onpopstate = _owo.has
 
 // 执行页面加载完毕方法
 _owo.ready(_owo.showPage)
-
-
-// 这是用于代码调试的自动刷新代码，他不应该出现在正式上线版本!
-if ("WebSocket" in window) {
-  // 打开一个 web socket
-  if (!window._owo.ws) window._owo.ws = new WebSocket("ws://" + window.location.host)
-  window._owo.ws.onmessage = function (evt) { 
-    if (evt.data == 'reload') {
-      location.reload()
-    }
-  }
-  window._owo.ws.onclose = function() { 
-    console.info('与服务器断开连接')
-  }
-} else {
-  console.error('浏览器不支持WebSocket')
-}
 

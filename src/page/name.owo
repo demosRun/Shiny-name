@@ -20,6 +20,8 @@
   .doc.doc-4(style="left: 300px;top: 567px;") 测试名
   .doc.doc-5(style="left: 300px;top: 567px;") 测试名
   .doc.doc-6(style="left: 300px;top: 567px;") 测试名
+  // 当前城市显示
+  .cityNow
 </template>
 <script>
 module.exports = {
@@ -28,10 +30,25 @@ module.exports = {
     renderer: null,
     scene: null,
     camera: null,
+    canChange: true,
     // 上一个数字
     lastNumber: null,
     peopleList: {
-      "安徽": ["汪天平","邵东华","张秀平","谢少清","蔡朝阳","徐晶晶","尚培培","何敏","张硕","阮雪娇","白璐","刘媛","贾畅","谢伟伟","王新","侯青庆","陈月婷","朱大杰","刘璟","范婷婷","吴齐兵","王建明","刘允化","刘洁","张永顺","李建桥","吴运虎","徐晓中","徐欢","卢杰"]
+      "安徽": ["汪天平","邵东华","张秀平","谢少清","蔡朝阳","徐晶晶","尚培培","何敏","张硕","阮雪娇","白璐","刘媛","贾畅","谢伟伟","王新","侯青庆","陈月婷","朱大杰","刘璟","范婷婷","吴齐兵","王建明","刘允化","刘洁","张永顺","李建桥","吴运虎","徐晓中","徐欢","卢杰"],
+      "福建": ["宁永鑫","林世丹","林璇","林晟","魏硕","黄拔威","胡颖","罗建雄","郑艳","林瑜","郭锦","沈层层","郑增华","林航瑾","黄燕珍","林守虹","李碧霞","蓝钰菱","洪丽北","陈晓颖","黄惠","陈传娟","高晶","董莉莉","黄碧霞","钱欣","叶诚栋","孙昕","陈凝","陈玉芳"],
+      "广东": ["易学锋","陈平","王宗枫","马晓军","罗少华","张忠德","刘秋江","王同汉","赵海方","陈垚","姚麟","胡浩","黄云卿","胡杨","赵莹","陈秋霞","肖红","方苓","孙长云","孙文昊","张挪富","徐远达","黄敬烨","席寅","刘川","陈经雕","何翔","庄雪","冯锐谭","钟仕欢"],
+      "贵州": ["金海燕","陈莉","黄英","邓正琼","高海","李丹","成波","冯秀兰","苟春林","黄菊娜","季桂安","陈璐","陈应华","兰远波","刘胜","李兰","李春红","胡达云","黄海","黄茜茜","鲍安梅","蔡松敏","曾洪梅","曾伦丽","陈丽","车宣敏","陈川","陈东","杜帅","高珊珊"],
+      "黑龙江": ["焦军东","张丙才","于世寰","韦南","贾莉","田振榆","许名妍","肖蓉儿","赵晓琳","王晨羽","张馨","郝谦依","朱寰","张可娇","张海薇","武立刚","张东海","刘旭之","李鹏","曲延章","杨磊","王文斌","顾泽鑫","苍春阳","董枫","牟海军","姜云飞","董忱忱","漆毅","黑炳昌"],
+      "湖南": ["高纪平","朱华波","刘毅","谭英征","梁彦超","罗细萍","熊佳丽","彭丽华","朱娟玲","谢建梅","付艳萍","陈娜","王嘉铭","邓建斌","李锐","欧飞宇","郭希","向毅","焦海禄","姚承明","姚专","任玉钢","吴志红","王菊花","邱亿","邓玲金","周琴","吴佩芬","汪勇","胡学兵"],
+      "江苏": ["邱泽森","任晓波","顾寿永","吴伟","王宁","卢爱明","葛宁海","汤苏川","陆敏","吴红辉","汪海波","吴苏凌","戴德","张小凡","秦湧","陶连姗","李彦玲","朱云鸿","吴卫娟","孙立群","蒋华","邵龙刚","张海东","黄宝驹","陈浩","周游","朱成华","朱玲","胡星星","朱小涵"],
+      "辽宁": ["焦龙友","梁宏军","杨泽辉","郭洪亮","汪海源","蓝涛","李晶","陈亮","方丽卉","陈娜","丁仁彧","尹超","乔璋晓","马旭","李良","王鑫","殷彭","尹方","张宇","贾佳","张旭","崇巍","侯刚","才权","贾子毅","李学渊","孙喜家","张东勇","邓明涵","吕鹏"],
+      "山西": ["张晓清","王军红","原大江","王俊平","李晋","王秀哲","郭焱","刘毅","杨立明","李晶","弓清梅","王晓凝","张朝华","杨晓静","乔爱春","杜艺","翟艳萍","陈素清","郑洁","栗林","李学文","郝斌","闫新明","李智","李萍","郑磊","石海鹏","黄润虎","王晓君","单张涛"],
+      "上海": ["干依婷","马杰飞","马国光","王汉超","王青青","王宜赟","王春灵","王喆","毛佳健","方贤丰","左梦颖","叶伶","叶君","叶茂松","印敏","丁百兴","万亿","卫尹","卫慧","马昕","马珏萍","王冬艳","王欢欢","王兵","王雨佳","王佳","王昳丽","王倩露","王烨","王银辉"],
+      "四川": ["乔甫","卢云","陈萍","朱仕超","罗凤鸣","王业","王博","刘焱斌","尹万红","冯梅","张焱林","宋志芳","何国庆","张耀之","谢莉","江雪","银玲","冯佩璐","蔡琳","漆贵华","吴孝文","彭云耀","张茂杰","向钱","李刚","陈庆","周雨田","朱江","黄仁刚","黄晓波","邓磊","刘蓉安","贺宏丽"],
+      "天津": ["张伯礼","杨丰文","黄明","陆伟","路佳","刘蕊","吕扬","张涛","李永亮","林春光","赵宝伟","苑沛然","申文杰","孙志萍","王玥","王莹","赵学群","李寅","杨敏","宋洲洋","刘辉","魏嵩昀","戴华荣","贾锐","李松松","周焕丽","李妍","苏毅","刘富康","马广艳","贯筱琳","赵珊","李智伯"],
+      "浙江": ["陆群","吴红梅","曹启峰","徐飞鸿","胡伟航","任奇","王艳红","汪佶","杨向红","谢邦好","金莹","陈美娟","张婧","凌磊","徐明","陈彦洁","吕玲玲","郑霞","喻成波","马青娜","刘烨","符一骐","陈城洋","颜伏归","赵伟","吴学杰","卢燕","陈岳亮","董凌峰","吴晓虹"],
+      "重庆": ["陈垦","潘传波","唐远航","石任重","刘煜亮","张为华","章述军","杨丽","白阳","蒋磊","张晞","吴林娟","梁娟","徐娟","朱莎莎","陈茜","周璐","吴豪杰","李娟","谭丽","王世纯","郑向鹏","赖晓东","杜先智","黄文祺","王勤","杨帅","符跃强","姚勇刚","鲁力"],
+
     }
   },
   created: function () {
@@ -60,25 +77,21 @@ module.exports = {
         url: 'http://littlepoll1.people.com.cn/button/index.php/cip/button/647/63229',
         dataType: 'jsonp'
       })
+      this.heartChange()
       if (heartClock) clearTimeout(heartClock)
       heartClock = setTimeout(() => {
         heartClock = null
         owo.id.heartBig.classList.remove('heart-ani')
       }, 1000)
     })
-    const peopleList = randomGet(this.data.peopleList['安徽'], 6)
-    const showDomList = owo.query('.doc')
-    for (let index = 0; index < peopleList.length; index++) {
-      const element = peopleList[index];
-      showDomList[index].innerText = element
-    }
+    this.changePepople()
     setTimeout(() => {
       this.creatPeople()
     }, 600);
     // 获取随机一个城市
   },
   creatPeople: function () {
-    peopleList = owo.query('.doc')
+    const peopleList = owo.query('.doc')
     for (let index = 0; index < peopleList.length; index++) {
       const element = peopleList[index];
       setTimeout(() => {
@@ -87,6 +100,44 @@ module.exports = {
         element.style.opacity = 1
       }, index * 200);
     }
+  },
+  disPeople: function () {
+    const peopleList = owo.query('.doc')
+    for (let index = 0; index < peopleList.length; index++) {
+      const element = peopleList[index];
+      setTimeout(() => {
+        element.style.left = '300px'
+        element.style.top = '567px'
+        element.style.opacity = 0
+      }, index * 100);
+    }
+  },
+  heartChange: function () {
+    if (!this.data.canChange) return
+    this.disPeople()
+    setTimeout(() => {
+      this.changePepople()
+      setTimeout(() => {
+        this.creatPeople()
+      }, 600);
+    }, 1000);
+  },
+  changePepople: function () {
+    if (!this.data.canChange) return
+    console.log('改变显示人物')
+    this.data.canChange = false
+    const randomCity = randomGet(Object.keys(this.data.peopleList), 1)
+    owo.query('.cityNow')[0].innerText = randomCity
+    console.log(randomCity)
+    const peopleList = randomGet(this.data.peopleList[randomCity], 6)
+    const showDomList = owo.query('.doc')
+    for (let index = 0; index < peopleList.length; index++) {
+      const element = peopleList[index];
+      showDomList[index].innerText = element
+    }
+    setTimeout(() => {
+      this.data.canChange = true
+    }, 2000);
   }
 }
 </script>
@@ -176,5 +227,14 @@ module.exports = {
 .doc-6 {
   top: 370px;
   left: 615px;
+}
+.cityNow {
+  position: absolute;
+  right: 25px;
+  top: 247px;
+  font-size: 46px;
+  width: 50px;
+  font-weight: bold;
+  color: #fefec1;
 }
 </style>
