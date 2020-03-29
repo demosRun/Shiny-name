@@ -14,6 +14,12 @@
     .text 人点赞
   //- 粒子背景效果
   canvas#canvasBg
+  .doc.doc-1(style="left: 300px;top: 567px;") 测试名
+  .doc.doc-2(style="left: 300px;top: 567px;") 测试名
+  .doc.doc-3(style="left: 300px;top: 567px;") 测试名
+  .doc.doc-4(style="left: 300px;top: 567px;") 测试名
+  .doc.doc-5(style="left: 300px;top: 567px;") 测试名
+  .doc.doc-6(style="left: 300px;top: 567px;") 测试名
 </template>
 <script>
 module.exports = {
@@ -23,14 +29,13 @@ module.exports = {
     scene: null,
     camera: null,
     // 上一个数字
-    lastNumber: null
+    lastNumber: null,
+    peopleList: {
+      "安徽": ["汪天平","邵东华","张秀平","谢少清","蔡朝阳","徐晶晶","尚培培","何敏","张硕","阮雪娇","白璐","刘媛","贾畅","谢伟伟","王新","侯青庆","陈月婷","朱大杰","刘璟","范婷婷","吴齐兵","王建明","刘允化","刘洁","张永顺","李建桥","吴运虎","徐晓中","徐欢","卢杰"]
+    }
   },
   created: function () {
     draw()
-    // this.creatBG()
-    // setTimeout(() => {
-    //   owo.tool.notice('点击屏幕为Ta们点赞!')
-    // }, 1200);
     // 不断获取点赞信息
     setInterval(() => {
       $.ajax({
@@ -61,13 +66,35 @@ module.exports = {
         owo.id.heartBig.classList.remove('heart-ani')
       }, 1000)
     })
+    const peopleList = randomGet(this.data.peopleList['安徽'], 6)
+    const showDomList = owo.query('.doc')
+    for (let index = 0; index < peopleList.length; index++) {
+      const element = peopleList[index];
+      showDomList[index].innerText = element
+    }
+    setTimeout(() => {
+      this.creatPeople()
+    }, 600);
+    // 获取随机一个城市
+  },
+  creatPeople: function () {
+    peopleList = owo.query('.doc')
+    for (let index = 0; index < peopleList.length; index++) {
+      const element = peopleList[index];
+      setTimeout(() => {
+        element.style.left = ''
+        element.style.top = ''
+        element.style.opacity = 1
+      }, index * 200);
+    }
   }
 }
 </script>
 <style lang="less">
 .name {
-  // background-image: url('@|318.jpg|');
-  background-color: #0d2846;
+  background-position: center;
+  background-image: url('@|318.jpg|');
+  // background-color: #0d2846;
 }
 .so {position: absolute;}
 .so-0 {left: 432px;top: 951px;z-index: 7;}
@@ -88,6 +115,7 @@ module.exports = {
   line-height: 40px;
   width: 300px;
   left: 315px;
+  font-weight: bold;
 }
 .scoreboard {
   width: 180px;
@@ -108,5 +136,45 @@ module.exports = {
 
 .heart-ani {
   animation: heartPlay 1s infinite 0s linear;
+}
+.doc {
+  position: absolute;
+  left: 300px;
+  top: 567px;
+  padding-top: 80px;
+  width: 83px;
+  background-repeat: no-repeat;
+  color: #ffff9b;
+  font-size: 24px;
+  line-height: 44px;
+  text-align: center;
+  background-image: url('@|yisheng.png|');
+  z-index: 999;
+  transition: left 1s, top 1s, opacity 1s;
+  opacity: 0;
+}
+.doc-2 {
+  left: 100px;
+  top: 260px;
+}
+.doc-1 {
+  left: 8px;
+  top: 556px;
+}
+.doc-3 {
+  top: 263px;
+  left: 225px;
+}
+.doc-4 {
+  top: 338px;
+  left: 321px;
+}
+.doc-5 {
+  top: 318px;
+  left: 479px;
+}
+.doc-6 {
+  top: 370px;
+  left: 615px;
 }
 </style>

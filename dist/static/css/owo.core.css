@@ -174,7 +174,8 @@ li {
   transition: top 0.5s;
 }
 .name {
-  background-color: #0d2846;
+  background-position: center;
+  background-image: url('../resource/318.jpg');
 }
 
 .name .so {
@@ -235,10 +236,10 @@ li {
   top: 1071px;
   font-size: 38px;
   display: flex;
-  font-weight: bold;
   line-height: 40px;
   width: 300px;
   left: 315px;
+  font-weight: bold;
 }
 
 .name .scoreboard {
@@ -278,6 +279,53 @@ li {
 .name .heart-ani {
   -webkit-animation: heartPlay 1s infinite 0s linear;
           animation: heartPlay 1s infinite 0s linear;
+}
+
+.name .doc {
+  position: absolute;
+  left: 300px;
+  top: 567px;
+  padding-top: 80px;
+  width: 83px;
+  background-repeat: no-repeat;
+  color: #ffff9b;
+  font-size: 24px;
+  line-height: 44px;
+  text-align: center;
+  background-image: url('../resource/yisheng.png');
+  z-index: 999;
+  transition: left 1s, top 1s, opacity 1s;
+  opacity: 0;
+}
+
+.name .doc-2 {
+  left: 100px;
+  top: 260px;
+}
+
+.name .doc-1 {
+  left: 8px;
+  top: 556px;
+}
+
+.name .doc-3 {
+  top: 263px;
+  left: 225px;
+}
+
+.name .doc-4 {
+  top: 338px;
+  left: 321px;
+}
+
+.name .doc-5 {
+  top: 318px;
+  left: 479px;
+}
+
+.name .doc-6 {
+  top: 370px;
+  left: 615px;
 }
 .page-1 {
   background-image: url('../resource/page-1.jpg');

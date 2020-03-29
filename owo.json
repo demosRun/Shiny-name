@@ -80,7 +80,8 @@
 		{
 			"name": "main",
 			"src": "./src/main.js",
-			"resource": true
+			"resource": true,
+			"afterbody": false
 		},
 		{
 			"name": "autoScale",
@@ -112,15 +113,15 @@
 			"afterbody": true
 		},
 		{
-			"name": "STLLoader.js",
-			"src": "./src/resource/STLLoader.js",
-			"afterbody": true
-		},
-		{
 			"name": "pointCloud.js",
 			"src": "./src/pointCloud.js",
 			"afterbody": true,
 			"resource": true
+		},
+		{
+			"name": "randomNum.js",
+			"src": "./owo_modules/randomNum.js",
+			"afterbody": true
 		}
 	],
 	"styleList": [

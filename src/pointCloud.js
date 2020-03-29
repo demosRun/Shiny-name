@@ -19,7 +19,7 @@ function initRender() {
 var camera;
 function initCamera() {
   camera = new THREE.PerspectiveCamera(45, canvasW/canvasH, 0.1, 1000);
-  camera.position.set(0, 20, 25);
+  camera.position.set(0, 0, 30);
   camera.lookAt(new THREE.Vector3(0,0,0));
 }
 
@@ -66,7 +66,7 @@ function getGeometry() {
     vertex.toArray( positions, i * 3 )
     color.toArray( colors, i * 3 );
 
-    sizes[ i ] = 0;
+    sizes[ i ] = 1;
 
   }
   
@@ -80,100 +80,57 @@ function getGeometry() {
 
 let sphere = null
 function initModel() {
-  
-    //辅助工具
-    // var helper = new THREE.AxesHelper(50);
-    // scene.add(helper);
-    var loader = new THREE.STLLoader();
-    let newArr = []
-    loader.load(stlPath, function (geometry) {
-      let ind = 0
-      let temp = []
-      const arrList = geometry.attributes.position.array
-      for (let index = 0; index < arrList.length / 3; index++) {
-        
-        if (Math.random() > 0.95) {
-          newArr.push([
-            arrList[index * 3],
-            arrList[index * 3 + 1],
-            arrList[index * 3 + 2],
-          ])
-        }
-      }
-      console.log(JSON.stringify(newArr))
-      
-      // Geometry = geometry
-        //创建纹理
-      // var material = new THREE.PointsMaterial({
-      //   color: 0xfffd80,
-      //   size: 6,
-      //   opacity: 0.8,
-      //   transparent: true,
-      //   blending: THREE.AdditiveBlending,
-      //   depthTest: false,
-      //   // vertexColors: true,
-      //   sizeAttenuation: false,
-      //   // @|dot.png|
-      //   map: new THREE.TextureLoader().load( './static/resource/dot.png' )
-      // });
-      
-      var material = new THREE.ShaderMaterial( {
+  var material = new THREE.ShaderMaterial( {
 
-        uniforms: {
-          color: { value: new THREE.Color( 0xffffff ) },
-          pointTexture: { value: new THREE.TextureLoader().load( "./static/resource/dot.png" ) }
-        },
-        vertexShader: `attribute float size;
-        attribute vec3 customColor;
-  
-        varying vec3 vColor;
-  
-        void main() {
-  
-          vColor = customColor;
-  
-          vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
-  
-          gl_PointSize = size * ( 300.0 / -mvPosition.z );
-  
-          gl_Position = projectionMatrix * mvPosition;
-  
-        }`,
-        fragmentShader: `uniform vec3 color;
-        uniform sampler2D pointTexture;
-  
-        varying vec3 vColor;
-  
-        void main() {
-  
-          gl_FragColor = vec4( color * vColor, 1.0 );
-          gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
-  
-        }
-        `,
+    uniforms: {
+      color: { value: new THREE.Color( 0xffffff ) },
+      // @|dot.png|
+      pointTexture: { value: new THREE.TextureLoader().load( "./static/resource/dot.png" ) }
+    },
+    vertexShader: `attribute float size;
+    attribute vec3 customColor;
 
-        blending: THREE.AdditiveBlending,
-        depthTest: false,
-        transparent: true
+    varying vec3 vColor;
 
-      } );
-      sphere = new THREE.Points(Geometry, material);
-      
-      sphere.rotation.x = -0.5 * Math.PI; //将模型摆正
-      sphere.scale.set(1, 1, 1); //缩放
-      Geometry.center(); //居中显示
-      // console.log(JSON.stringify(sphere.toJSON()))
-      sphere.position.y = 3
-      scene.add(sphere);
-    });
+    void main() {
+
+      vColor = customColor;
+
+      vec4 mvPosition = modelViewMatrix * vec4( position, 1.0 );
+
+      gl_PointSize = size * ( 300.0 / -mvPosition.z );
+
+      gl_Position = projectionMatrix * mvPosition;
+
+    }`,
+    fragmentShader: `uniform vec3 color;
+    uniform sampler2D pointTexture;
+
+    varying vec3 vColor;
+
+    void main() {
+
+      gl_FragColor = vec4( color * vColor, 1.0 );
+      gl_FragColor = gl_FragColor * texture2D( pointTexture, gl_PointCoord );
+
+    }
+    `,
+
+    blending: THREE.AdditiveBlending,
+    depthTest: false,
+    transparent: true
+
+  } );
+  sphere = new THREE.Points(Geometry, material);
+  
+  sphere.rotation.x = -0.5 * Math.PI; //将模型摆正
+  sphere.scale.set(1, 1, 1); //缩放
+  Geometry.center(); //居中显示
+  // console.log(JSON.stringify(sphere.toJSON()))
+  sphere.position.y = 2
+  scene.add(sphere);
 }
 
-function test () {
-  for (let index = 0; index < Geometry.attributes.position.array[0].length; index++) {
-    Geometry.attributes.position.array[0][index] = 0
-  }
-  console.log(Geometry)
-}
 
 function render() {
   // console.log(sphere)
@@ -185,7 +142,7 @@ function render() {
   var attributes = geometry.attributes;
 
   for ( var i = 0; i < attributes.size.array.length; i ++ ) {
-    attributes.size.array[ i ] = 1 + 0.8 * Math.sin( 0.1 * i + time );
+    attributes.size.array[ i ] = 0.8 + (0.5 * Math.sin( 0.1 * i + time ));
   }
   attributes.size.needsUpdate = true;
   renderer.render( scene, camera );
