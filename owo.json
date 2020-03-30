@@ -108,17 +108,6 @@
 			"afterbody": true
 		},
 		{
-			"name": "three.min.js",
-			"src": "http://politics.people.com.cn/img/MAIN/2019/08/119609/js/three.min.js",
-			"afterbody": true
-		},
-		{
-			"name": "pointCloud.js",
-			"src": "./src/pointCloud.js",
-			"afterbody": true,
-			"resource": true
-		},
-		{
 			"name": "randomNum.js",
 			"src": "./owo_modules/randomNum.js",
 			"afterbody": true
@@ -199,9 +188,15 @@
 		}
 	},
 	"globalAni": {
-		"in": "moveToLeftFade",
-		"out": "moveFromRightFade",
-		"backIn": "moveToRightFade",
-		"backOut": "moveFromLeftFade"
+		"in": "fade",
+		"out": "moveFromRight",
+		"backIn": "fade",
+		"backOut": "moveFromLeft"
+	},
+	"pageAni": {
+		"videoPlay": {
+			"in": "scaleDownCenter",
+			"out": "scaleUpCenter&&delay400"
+		}
 	}
 }

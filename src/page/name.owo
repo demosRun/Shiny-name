@@ -1,5 +1,6 @@
 <template lang="pug">
 .name
+  img.bg-img(src="@|bg.gif|")
   img.so.so-0(src="@|334.png|" o-animation="shrink")
   img.so.so-1(src="@|372.png|")
   img.so.so-2#heartBig(src="@|373.png|")
@@ -52,7 +53,7 @@ module.exports = {
     }
   },
   created: function () {
-    draw()
+    // draw()
     // 不断获取点赞信息
     setInterval(() => {
       $.ajax({
@@ -139,8 +140,15 @@ module.exports = {
 <style lang="less">
 .name {
   background-position: center;
-  background-image: url('@|318.jpg|');
+  // background-image: url('@|318.jpg|');
+  background-color: #04131b;
   // background-color: #0d2846;
+}
+.bg-img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  margin: auto;
 }
 .so {position: absolute;}
 .so-0 {left: 432px;top: 951px;z-index: 7;}

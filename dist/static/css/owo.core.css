@@ -176,7 +176,14 @@ li {
 }
 .name {
   background-position: center;
-  background-image: url('../resource/318.jpg');
+  background-color: #04131b;
+}
+
+.name .bg-img {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  margin: auto;
 }
 
 .name .so {
@@ -584,65 +591,67 @@ li {
   }
 }
 /* 页面切换动画 */
-.o-page-moveToLeftFade {
-	-webkit-animation: moveToLeftFade .7s ease both;
-	-moz-animation: moveToLeftFade .7s ease both;
-	animation: moveToLeftFade .7s ease both;
-}
-@-webkit-keyframes moveToLeftFade {
-	to { opacity: 0; -webkit-transform: translateX(-100%); }
-}
-@-moz-keyframes moveToLeftFade {
-	to { opacity: 0; -moz-transform: translateX(-100%); }
-}
-@keyframes moveToLeftFade {
-	to { opacity: 0; transform: translateX(-100%); }
-}
-.o-page-moveFromRightFade {
-	-webkit-animation: moveFromRightFade .7s ease both;
-	-moz-animation: moveFromRightFade .7s ease both;
-	animation: moveFromRightFade .7s ease both;
+.o-page-fade {
+	-webkit-animation: fade .7s ease both;
+	-moz-animation: fade .7s ease both;
+	animation: fade .7s ease both;
 }
 
-@-webkit-keyframes moveFromRightFade {
-	from { opacity: 0; -webkit-transform: translateX(100%); }
+@-webkit-keyframes fade {
+	to { opacity: 0; }
 }
-@-moz-keyframes moveFromRightFade {
-	from { opacity: 0; -moz-transform: translateX(100%); }
+@-moz-keyframes fade {
+	to { opacity: 0; }
 }
-@keyframes moveFromRightFade {
-	from { opacity: 0; transform: translateX(100%); }
+@keyframes fade {
+	to { opacity: 0; }
 }
-.o-page-moveToRightFade {
-	-webkit-animation: moveToRightFade .7s ease both;
-	-moz-animation: moveToRightFade .7s ease both;
-	animation: moveToRightFade .7s ease both;
-}
-
-@-webkit-keyframes moveToRightFade {
-	to { opacity: 0; -webkit-transform: translateX(100%); }
-}
-@-moz-keyframes moveToRightFade {
-	to { opacity: 0; -moz-transform: translateX(100%); }
-}
-@keyframes moveToRightFade {
-	to { opacity: 0; transform: translateX(100%); }
-}
-.o-page-moveFromLeftFade {
-	-webkit-animation: moveFromLeftFade .7s ease both;
-	-moz-animation: moveFromLeftFade .7s ease both;
-	animation: moveFromLeftFade .7s ease both;
+.o-page-moveFromRight {
+	-webkit-animation: moveFromRight .6s ease both;
+	-moz-animation: moveFromRight .6s ease both;
+	animation: moveFromRight .6s ease both;
 }
 
-@-webkit-keyframes moveFromLeftFade {
-	from { opacity: 0; -webkit-transform: translateX(-100%); }
+@-webkit-keyframes moveFromRight {
+	from { -webkit-transform: translateX(100%); }
 }
-@-moz-keyframes moveFromLeftFade {
-	from { opacity: 0; -moz-transform: translateX(-100%); }
+@-moz-keyframes moveFromRight {
+	from { -moz-transform: translateX(100%); }
 }
-@keyframes moveFromLeftFade {
-	from { opacity: 0; transform: translateX(-100%); }
+@keyframes moveFromRight {
+	from { transform: translateX(100%); }
 }
+.o-page-moveFromLeft {
+	-webkit-animation: moveFromLeft .6s ease both;
+	-moz-animation: moveFromLeft .6s ease both;
+	animation: moveFromLeft .6s ease both;
+}
+
+@-webkit-keyframes moveFromLeft {
+	from { -webkit-transform: translateX(-100%); }
+}
+@-moz-keyframes moveFromLeft {
+	from { -moz-transform: translateX(-100%); }
+}
+@keyframes moveFromLeft {
+	from { transform: translateX(-100%); }
+}
+.o-page-scaleDownCenter {
+	-webkit-animation: scaleDownCenter .4s ease-in both;
+	-moz-animation: scaleDownCenter .4s ease-in both;
+	animation: scaleDownCenter .4s ease-in both;
+}
+
+@-webkit-keyframes scaleDownCenter {
+	to { opacity: 0; -webkit-transform: scale(.7); }
+}
+@-moz-keyframes scaleDownCenter {
+	to { opacity: 0; -moz-transform: scale(.7); }
+}
+@keyframes scaleDownCenter {
+	to { opacity: 0; transform: scale(.7); }
+}
+
 
 /* 动画效果 */
 @keyframes fadeInLeft {

@@ -34,7 +34,7 @@
     <!-- 页面[videoPlay]-->
     <div class="video-play page" template="videoPlay" style="display: none;"><video src="./static/resource/video.mp4" x5-playsinline="true" x5-video-player-fullscreen="true" preload="auto" x5-video-orientation="landscape" playsinline="true" webkit-playsinline="true" x-webkit-airplay="true" x5-video-player-type="h5"></video></div>
     <!-- 页面[name]-->
-    <div class="name page" template="name" style="display: none;"><img class="so so-0 owo-animation-shrink" src="./static/resource/334.png" o-animation="shrink"><img class="so so-1" src="./static/resource/372.png"><img class="so so-2" id="heartBig" src="./static/resource/373.png"><img class="so so-3" src="./static/resource/374.png"><img class="so so-4" src="./static/resource/375.png" go="videoPlay/////true"><img class="so so-5 owo-animation-flicker" src="./static/resource/325.png" o-animation="flicker"><img class="so so-6" src="./static/resource/377.png"><img class="so so-7 owo-animation-shrink" src="./static/resource/320.png" o-animation="shrink" go="page1/////true"><div class="fabulous-text"><div class="scoreboard" template="scoreboard"><div class="scoreboard-item"> </div></div><div class="text">人点赞</div></div><canvas id="canvasBg"></canvas><div class="doc doc-1" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-2" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-3" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-4" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-5" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-6" style="left: 300px;top: 567px;">测试名</div><!-- 当前城市显示--><div class="cityNow"></div></div>
+    <div class="name page" template="name" style="display: none;"><img class="bg-img" src="./static/resource/bg.gif"><img class="so so-0 owo-animation-shrink" src="./static/resource/334.png" o-animation="shrink"><img class="so so-1" src="./static/resource/372.png"><img class="so so-2" id="heartBig" src="./static/resource/373.png"><img class="so so-3" src="./static/resource/374.png"><img class="so so-4" src="./static/resource/375.png" go="videoPlay/////true"><img class="so so-5 owo-animation-flicker" src="./static/resource/325.png" o-animation="flicker"><img class="so so-6" src="./static/resource/377.png"><img class="so so-7 owo-animation-shrink" src="./static/resource/320.png" o-animation="shrink" go="page1/////true"><div class="fabulous-text"><div class="scoreboard" template="scoreboard"><div class="scoreboard-item"> </div></div><div class="text">人点赞</div></div><canvas id="canvasBg"></canvas><div class="doc doc-1" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-2" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-3" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-4" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-5" style="left: 300px;top: 567px;">测试名</div><div class="doc doc-6" style="left: 300px;top: 567px;">测试名</div><!-- 当前城市显示--><div class="cityNow"></div></div>
     <!-- 页面[page1]-->
     <div class="page-1 page" template="page1" style="display: none;"><img class="so so-2" src="./static/resource/202.png"><img class="so so-3" src="./static/resource/275.png"><img class="so so-4" src="./static/resource/200.png" go="page2/////true"><img class="so so-5" src="./static/resource/196.png" go="name/////true"><img class="so so-6" src="./static/resource/276.png"><img class="so so-7" src="./static/resource/277.png"><img class="so so-8" src="./static/resource/189.png"><img class="so so-9" src="./static/resource/188.png"><select class="select-bar" o-change="changeSelect"><option value="./static/resource/poster-1.jpg">这声“美女”，不是恭维</option><option value="./static/resource/poster-2.jpg">坚持就是胜利，曙光就在前方</option><option value="./static/resource/poster-3.jpg">谢谢你为湖北拼过命</option><option value="./static/resource/poster-4.jpg">这是期待已久的道别</option><option value="./static/resource/poster-5.jpg">昨日逆行武汉，今朝胜利凯旋</option><option value="./static/resource/poster-6.jpg">“过水门”，为回家的英雄们接风洗尘</option></select><div class="go-number"><span>全国</span><span id="goNum">42000</span><span>多名医护人员驰援武汉</span></div><div class="like-number"><span>共有</span><span id="likeNum">2324212</span><span>份敬意献给援鄂医疗队</span></div></div>
     <!-- 页面[page2]-->
@@ -141,8 +141,8 @@ owo.script = {
     "created": function created() {
       var _this2 = this;
 
-      draw(); // 不断获取点赞信息
-
+      // draw()
+      // 不断获取点赞信息
       setInterval(function () {
         $.ajax({
           url: 'http://19diaocha.people.cn/20190605/json.php?type=647',
@@ -327,10 +327,16 @@ owo.script = {
   }
 };
 owo.globalAni = {
-  "in": "moveToLeftFade",
-  "out": "moveFromRightFade",
-  "backIn": "moveToRightFade",
-  "backOut": "moveFromLeftFade"
+  "in": "fade",
+  "out": "moveFromRight",
+  "backIn": "fade",
+  "backOut": "moveFromLeft"
+};
+owo.pageAni = {
+  "videoPlay": {
+    "in": "scaleDownCenter",
+    "out": "scaleUpCenter&&delay400"
+  }
 };</script>
   </body>
 </html>
@@ -339,6 +345,4 @@ owo.globalAni = {
     <script src="./static/js/html2canvas.min.js.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/toast.js.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/notice.js.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="http://politics.people.com.cn/img/MAIN/2019/08/119609/js/three.min.js" type="text/javascript"  charset="UTF-8"></script>
-    <script src="./static/js/pointCloud.js.js" type="text/javascript"  charset="UTF-8"></script>
     <script src="./static/js/randomNum.js.js" type="text/javascript"  charset="UTF-8"></script>
