@@ -12,7 +12,35 @@
   module.exports = {
     data: {
       imgList: [
-        ""
+        "@|188.png|",
+        "@|189.png|",
+        "@|196.png|",
+        "@|200.png|",
+        "@|202.png|",
+        "@|228.png|",
+        "@|232.png|",
+        "@|246.png|",
+        "@|273.png|",
+        "@|273-2.png|",
+        "@|274.png|",
+        "@|275.png|",
+        "@|276.png|",
+        "@|277.png|",
+        "@|318.jpg|",
+        "@|320.png|",
+        "@|325.png|",
+        "@|334.png|",
+        "@|372.png|",
+        "@|373.png|",
+        "@|374.png|",
+        "@|375.png|",
+        "@|377.png|",
+        "@|dot.png|",
+        "@|lanse.jpg|",
+        "@|loadingLogo.png|",
+        "@|page-1.jpg|",
+        "@|play.png|",
+        "@|yisheng.png|"
       ]
     },
     show: function () {

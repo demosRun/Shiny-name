@@ -114,13 +114,8 @@ module.exports = {
   },
   heartChange: function () {
     if (!this.data.canChange) return
-    this.disPeople()
-    setTimeout(() => {
-      this.changePepople()
-      setTimeout(() => {
-        this.creatPeople()
-      }, 600);
-    }, 1000);
+    // this.disPeople()
+    this.changePepople()
   },
   changePepople: function () {
     if (!this.data.canChange) return
@@ -137,7 +132,7 @@ module.exports = {
     }
     setTimeout(() => {
       this.data.canChange = true
-    }, 2000);
+    }, 500);
   }
 }
 </script>

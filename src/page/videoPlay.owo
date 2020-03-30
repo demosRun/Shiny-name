@@ -19,7 +19,8 @@ module.exports = {
 .video-play, video {
   display: block;
   width: 100%;
-  height: 100%;
+  height: auto;
   z-index: 10;
+  position: absolute;
 }
 </style>
