@@ -41,8 +41,8 @@
 <style lang="less">
 .music-menu {
   position: absolute;
-  right: 10px;
-  top: 10%;
+  right: 4px;
+  top: 13%;
   z-index: 9;
   width: 67px;
   height: 67px;

@@ -21,7 +21,7 @@ module.exports = {
     owo.id.likeNum2.innerText = owo.script.name.data.lastNumber || 514273
     owo.id.userShowImage.src = ''
     setTimeout(() => {
-      html2canvas(owo.id.showBox).then(function(canvas) {
+      html2canvas(owo.id.showBox, {allowTaint: true, useCORS: true}).then(function(canvas) {
         owo.id.userShowImage.src = canvas.toDataURL("image/png")
       })
     }, 800);
@@ -49,9 +49,14 @@ module.exports = {
     line-height: 40px;
     bottom: 50px;
     position: absolute;
-    left: 15px;
+    left: 11px;
     width: 440px;
-    letter-spacing: 12px;
+    letter-spacing: 13px;
+    font-variant: small-caps;
+    // transform: rotateY(90deg);
+    h2 {
+      font-weight: normal;
+    }
   }
 }
 .user-show-img {

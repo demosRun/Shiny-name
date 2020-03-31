@@ -77,6 +77,10 @@
   background-color: white;
   font-weight: bold;
   box-shadow: 4px 4px 7px #ccc;
+  appearance:none;  
+  -moz-appearance:none;  
+  -webkit-appearance:none;
+  background: url("@|select.png|") no-repeat 97% center transparent;
 }
 .like-number {
   position: absolute;

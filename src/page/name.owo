@@ -224,17 +224,17 @@ module.exports = {
   left: 321px;
 }
 .doc-5 {
-  top: 318px;
+  top: 360px;
   left: 479px;
 }
 .doc-6 {
-  top: 370px;
+  top: 450px;
   left: 615px;
 }
 .cityNow {
   position: absolute;
   right: 25px;
-  top: 247px;
+  top: 280px;
   font-size: 46px;
   width: 50px;
   font-weight: bold;
