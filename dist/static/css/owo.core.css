@@ -133,6 +133,13 @@ width: 100%;
 height: auto;
 z-index: 10;
 position: absolute;
+}
+
+.video-play .turn {
+position: absolute;
+top: 1250px;
+right: 20px;
+z-index: 99;
 }@-webkit-keyframes flicker {
 from {
 opacity: 100%;
@@ -224,6 +231,10 @@ z-index: 3;
 left: 591px;
 top: 1150px;
 z-index: 2;
+display: block;
+background-image: url('../resource/325.png');
+width: 135px;
+height: 76px;
 }
 
 .name .so-6 {
@@ -233,9 +244,12 @@ z-index: 1;
 }
 
 .name .so-7 {
-left: 167px;
-top: 1235px;
+left: 0;
+right: 0;
+top: 1221px;
 z-index: 0;
+width: 67%;
+margin: auto;
 }
 
 .name .fabulous-text {
@@ -491,13 +505,13 @@ height: 100%;
 
 .share .so-0 .text-bar {
 color: white;
-font-size: 8px;
+font-size: 12px;
 line-height: 40px;
 bottom: 50px;
 position: absolute;
-left: 11px;
+left: 6px;
 width: 440px;
-letter-spacing: 13px;
+letter-spacing: 8px;
 font-variant: small-caps;
 }
 
@@ -524,6 +538,11 @@ z-index: 3;
 left: 482px;
 top: 1273px;
 z-index: 2;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+pointer-events: none;
 }
 
 .share .so-3 {
@@ -536,6 +555,11 @@ z-index: 1;
 left: 73px;
 top: 185px;
 z-index: 0;
+}
+
+.share .big {
+font-weight: bold;
+color: #f4f492;
 }
 .music-menu {
 position: absolute;

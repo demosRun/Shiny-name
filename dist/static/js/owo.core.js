@@ -1,4 +1,4 @@
-// Tue Mar 31 2020 09:38:08 GMT+0800 (GMT+08:00)
+// Wed Apr 01 2020 23:53:08 GMT+0800 (GMT+08:00)
 var owo = {tool: {},state: {},};
 /* 方法合集 */
 var _owo = {}
@@ -192,64 +192,8 @@ _owo.addEvent = function (tempDom, moudleScript) {
   }
 }
 
-_owo.recursion = function (tempDom, callBack) {
-  if (!callBack || callBack(tempDom)) {
-    return
-  }
-  // 判断是否有子节点需要处理
-  if (tempDom.children) {
-    // 递归处理所有子Dom结点
-    for (var i = 0; i < tempDom.children.length; i++) {
-      // 获取子节点实例
-      var childrenDom = tempDom.children[i]
-      if (!childrenDom.hasAttribute('template') && !childrenDom.hasAttribute('view')) {
-        _owo.recursion(childrenDom, callBack)
-      }
-    }
-  } else {
-    console.info('元素不存在子节点!')
-    console.info(tempDom)
-  }
-}
 
 
-/* owo事件处理 */
-// 参数1: 当前正在处理的dom节点
-// 参数2: 当前正在处理的模块名称
-function handleEvent (moudleScript, enterDom) {
-  var moudleScript = moudleScript || this
-  var enterDom = enterDom || moudleScript.$el
-  // 判断是否是继承父元素方法
-  if (moudleScript._inherit){
-    moudleScript = moudleScript._parent
-  }
-  if (!enterDom) return
-  var tempDom = enterDom
-  
-  
-  
-  _owo.recursion(tempDom, function (childrenDom) {
-    if (childrenDom.hasAttribute('o-for')) return true
-    
-    _owo.addEvent(childrenDom, moudleScript)
-  })
-  // 递归处理子模板
-  for (var key in moudleScript.template) {
-    moudleScript.template[key].$el = tempDom.querySelector('[template="' + key + '"]')
-    handleEvent(moudleScript.template[key])
-  }
-}
-
-function owoPageInit () {
-  // console.log(entryDom)
-  // console.log(this)
-  _owo.runCreated(this)
-  for (var key in this.template) {
-    var templateScript = this.template[key]
-    _owo.runCreated(templateScript)
-  }
-  
-}
 
 
 
@@ -447,8 +391,72 @@ function Page(pageScript, parentScript) {
   }
 }
 
+function owoPageInit () {
+  // console.log(entryDom)
+  // console.log(this)
+  _owo.runCreated(this)
+  for (var key in this.template) {
+    var templateScript = this.template[key]
+    _owo.runCreated(templateScript)
+  }
+  
+}
+
+_owo.recursion = function (tempDom, callBack) {
+  if (!callBack || callBack(tempDom)) {
+    return
+  }
+  // 判断是否有子节点需要处理
+  if (tempDom.children) {
+    // 递归处理所有子Dom结点
+    for (var i = 0; i < tempDom.children.length; i++) {
+      // 获取子节点实例
+      var childrenDom = tempDom.children[i]
+      if (!childrenDom.hasAttribute('template') && !childrenDom.hasAttribute('view')) {
+        _owo.recursion(childrenDom, callBack)
+      }
+    }
+  } else {
+    console.info('元素不存在子节点!')
+    console.info(tempDom)
+  }
+}
+
+/* owo事件处理 */
+// 参数1: 当前正在处理的dom节点
+// 参数2: 当前正在处理的模块名称
+function handleEvent (moudleScript, enterDom) {
+  var moudleScript = moudleScript || this
+  var enterDom = enterDom || moudleScript.$el
+  // 判断是否是继承父元素方法
+  if (moudleScript._inherit){
+    moudleScript = moudleScript._parent
+  }
+  if (!enterDom) return
+  var tempDom = enterDom
+  
+  
+  
+  _owo.recursion(tempDom, function (childrenDom) {
+    if (childrenDom.hasAttribute('o-for')) return true
+    
+    _owo.addEvent(childrenDom, moudleScript)
+  })
+  // 递归处理子模板
+  for (var key in moudleScript.template) {
+    moudleScript.template[key].$el = tempDom.querySelector('[template="' + key + '"]')
+    handleEvent(moudleScript.template[key])
+  }
+}
+
 Page.prototype.owoPageInit = owoPageInit
 Page.prototype.handleEvent = handleEvent
+Page.prototype.query = function (str) {
+  return this.$el.querySelector(str)
+}
+Page.prototype.queryAll = function (str) {
+  return this.$el.querySelectorAll(str)
+}
 // 快速选择器
 owo.query = function (str) {
   return document.querySelectorAll('.page[template=' + owo.activePage +'] ' + str)

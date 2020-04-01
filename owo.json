@@ -74,6 +74,10 @@
 	],
 	"scriptList": [
 		{
+			"name": "autoScale",
+			"src": "./src/resource/autoScale.js"
+		},
+		{
 			"name": "jquery1.11.0",
 			"src": "http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"
 		},
@@ -82,10 +86,6 @@
 			"src": "./src/main.js",
 			"resource": true,
 			"afterbody": false
-		},
-		{
-			"name": "autoScale",
-			"src": "https://cunchu.site/owo/plug/autoScale.js"
 		},
 		{
 			"name": "heart.js",
@@ -184,7 +184,8 @@
 				"merge": false,
 				"allAnimate": false
 			},
-			"startAtHome": true
+			"startAtHome": true,
+			"handleLink": true
 		}
 	},
 	"globalAni": {

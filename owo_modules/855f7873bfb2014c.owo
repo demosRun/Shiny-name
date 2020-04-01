@@ -12,6 +12,7 @@
   module.exports = {
     data: {
       imgList: [
+        "@|lanse.jpg|",
         "@|188.png|",
         "@|189.png|",
         "@|196.png|",
@@ -36,7 +37,6 @@
         "@|375.png|",
         "@|377.png|",
         "@|dot.png|",
-        "@|lanse.jpg|",
         "@|loadingLogo.png|",
         "@|page-1.jpg|",
         "@|play.png|",

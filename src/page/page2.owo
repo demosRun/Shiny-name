@@ -3,10 +3,10 @@
   .so.so-0#showBox
     img#showImg(src="@|poster-1.jpg|")
     .text-bar
-      h2 全国42000多名医护人员驰援武汉
+      h2 全国<span class="big">42000</span>多名医护人员驰援武汉
       h2
-        span 共有
-        span#likeNum2 233300
+        span 已有
+        span.big#likeNum2 233300
         span 份敬意献给援鄂医疗队
   //- 真实显示的图片
   img.user-show-img#userShowImage
@@ -45,15 +45,14 @@ module.exports = {
   }
   .text-bar {
     color: white;
-    font-size: 8px;
+    font-size: 12px;
     line-height: 40px;
     bottom: 50px;
     position: absolute;
-    left: 11px;
+    left: 6px;
     width: 440px;
-    letter-spacing: 13px;
+    letter-spacing: 8px;
     font-variant: small-caps;
-    // transform: rotateY(90deg);
     h2 {
       font-weight: normal;
     }
@@ -68,7 +67,11 @@ module.exports = {
   position: absolute;
 }
 .so-1 {left: 286px;top: 1272px;z-index: 3}
-.so-2 {left: 482px;top: 1273px;z-index: 2}
+.so-2 {left: 482px;top: 1273px;z-index: 2;user-select: none; pointer-events: none;}
 .so-3 {left: 91px;top: 1273px;z-index: 1}
 .so-4 {left: 73px;top: 185px;z-index: 0}
+.big {
+  font-weight:  bold;
+  color: #f4f492;
+}
 </style>
