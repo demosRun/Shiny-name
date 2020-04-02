@@ -34,7 +34,7 @@ module.exports = {
 }
 .turn {
   position: absolute;
-  top: 1250px;
+  top: 1000px;
   right: 20px;
   z-index: 99;
 }

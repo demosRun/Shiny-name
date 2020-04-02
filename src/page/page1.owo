@@ -11,20 +11,14 @@
   img.so.so-8(src="@|189.png|")
   img.so.so-9(src="@|188.png|")
   select.select-bar(o-change="changeSelect")
-    option(value="@|poster-1.jpg|") 这声“美女”，不是恭维
-    option(value="@|poster-2.jpg|") 坚持就是胜利，曙光就在前方
     option(value="@|poster-3.jpg|") 谢谢你为湖北拼过命
+    option(value="@|poster-2.jpg|") 坚持就是胜利，曙光就在前方
     option(value="@|poster-4.jpg|") 这是期待已久的道别
     option(value="@|poster-5.jpg|") 昨日逆行武汉，今朝胜利凯旋
     option(value="@|poster-6.jpg|") “过水门”，为回家的英雄们接风洗尘
-  .go-number
-    span 全国
-    span#goNum 42000
-    span 多名医护人员驰援武汉
-  .like-number
-    span 共有
-    span#likeNum 2324212
-    span 份敬意献给援鄂医疗队
+    option(value="@|poster-1.jpg|") 这声“美女”，不是恭维
+  .page1-like-box
+    span#likeNum
 </template>
 
 <script>
@@ -62,8 +56,8 @@
 .select-bar {
   position: absolute;
   top: 425px;
-  height: 80px;
-  width: 80%;
+  height: 100px;
+  width: 90%;
   display: block;
   left: 0;
   right: 0;
@@ -76,36 +70,32 @@
   color: #706e6e;
   background-color: white;
   font-weight: bold;
-  box-shadow: 4px 4px 7px #ccc;
+  box-shadow: 0px 0px 21px #bda9a9;
   appearance:none;  
   -moz-appearance:none;  
   -webkit-appearance:none;
   background: url("@|select.png|") no-repeat 97% center transparent;
 }
-.like-number {
+.page1-like-box {
+  width: 585px;
+  height: 205px;
+  background-image: url('@|page1-like.png|');
   position: absolute;
-  top: 872px;
-  font-size: 38px;
-  color: #cb9569;
-  font-weight: bold;
-  z-index: 9;
-  text-align: center;
-  width: 100%;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 8%;
+  bottom: 0;
+  margin: auto;
   #likeNum {
-    font-size: 50px;
-  }
-}
-.go-number {
-  position: absolute;
-  top: 778px;
-  font-size: 38px;
-  color: #cb9569;
-  font-weight: bold;
-  z-index: 9;
-  text-align: center;
-  width: 100%;
-  #goNum {
-    font-size: 50px;
+    color: #664947;
+    font-size: 47px;
+    font-weight: bold;
+    position: absolute;
+    top: 154px;
+    width: 250px;
+    text-align: center;
+    left: 148px;
   }
 }
 </style>

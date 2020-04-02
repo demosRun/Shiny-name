@@ -23,5 +23,5 @@ document.body.addEventListener('touchmove', function (e) {
 // }
 
 setTimeout(() => {
-  document.querySelector('.video-play video').style.top = -autoScaleInfo.hideHeight / 2 + 'px'
+  document.querySelector('.video-play video').style.top = -autoScaleInfo.hideHeight + 'px'
 }, 500)

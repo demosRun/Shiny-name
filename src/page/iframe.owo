@@ -1,0 +1,31 @@
+<template lang="pug">
+.iframe
+  iframe(src="http://society.people.com.cn/n1/2020/0318/c1008-31638155.html")
+  img.back(src="@|back.png|" go="name/////true")
+</template>
+<script>
+module.exports = {
+  created: function () {
+    this.query('iframe').style.height = autoScaleInfo.showHeight + 'px'
+    this.query('iframe').style.marginTop = -autoScaleInfo.hideHeight + 'px'
+  }
+}
+</script>
+<style lang="less">
+iframe {
+  border: none;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  display: block;
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+}
+.back {
+  position: absolute;
+  z-index: 99;
+  right: 60px;
+  bottom: 263px;
+}
+</style>

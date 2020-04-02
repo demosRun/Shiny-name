@@ -79,7 +79,7 @@
 		},
 		{
 			"name": "jquery1.11.0",
-			"src": "http://tools.people.com.cn/libs/jquery/1.11.1/jquery-1.11.1.min.js"
+			"src": "./src/resource/jquery-1.11.1.min.js"
 		},
 		{
 			"name": "main",
@@ -111,6 +111,11 @@
 			"name": "randomNum.js",
 			"src": "./owo_modules/randomNum.js",
 			"afterbody": true
+		},
+		{
+			"name": "typing.js",
+			"afterbody": true,
+			"src": "./owo_modules/typing.js"
 		}
 	],
 	"styleList": [
@@ -150,6 +155,11 @@
 			"name": "playMusic",
 			"src": "https://template.owo.ink/947eded0f03783ad.owo",
 			"type": "block"
+		},
+		{
+			"name": "iframe",
+			"src": "/src/page/iframe.owo",
+			"type": "page"
 		}
 	],
 	"mode": {
@@ -185,7 +195,7 @@
 				"allAnimate": false
 			},
 			"startAtHome": true,
-			"handleLink": true
+			"handleLink": false
 		}
 	},
 	"globalAni": {

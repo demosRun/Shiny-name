@@ -16,8 +16,8 @@ function getScale () {
     autoScaleInfo.scale = scale
     scaleBox.style.width = autoScaleInfo.deviseW + 'px'
     scaleBox.style.height = autoScaleInfo.deviseH + 'px'
-    autoScaleInfo.hideHeight = autoScaleInfo.innerHeight - autoScaleInfo.deviseH * scale
-    scaleBox.style.transform = `scale(${scale}, ${scale}) translate(0, ${autoScaleInfo.hideHeight / 2 / scale}px)`
+    autoScaleInfo.hideHeight = (autoScaleInfo.innerHeight - autoScaleInfo.deviseH * scale) / 2 /scale
+    scaleBox.style.transform = `scale(${scale}, ${scale}) translate(0, ${autoScaleInfo.hideHeight}px)`
     scaleBox.style.transformOrigin = `0px 0px 0px`
     autoScaleInfo.showHeight = autoScaleInfo.innerHeight / autoScaleInfo.scale
     autoScaleInfo.showWidth = autoScaleInfo.innerWidth / autoScaleInfo.scale

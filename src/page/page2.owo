@@ -1,23 +1,20 @@
 <template lang="pug">
 .share
   .so.so-0#showBox
-    img#showImg(src="@|poster-1.jpg|")
-    .text-bar
-      h2 全国<span class="big">42000</span>多名医护人员驰援武汉
-      h2
-        span 已有
-        span.big#likeNum2 233300
-        span 份敬意献给援鄂医疗队
+    img#showImg(src="@|poster-3.jpg|")
+    .page2-like-box
+      img(src="@|page2-like.png|")
+      span.big#likeNum2 233300
   //- 真实显示的图片
   img.user-show-img#userShowImage
-  img.so.so-1(src="@|246.png|" go="page1/////true")
-  img.so.so-2(src="@|232.png|")
+  img.so.so-2(src="@|246.png|" go="page1/////true")
   img.so.so-3(src="@|228.png|" o-tap="window.location.replace('')")
   img.so.so-4(src="@|273-2.png|")
 </template>
 <script>
 module.exports = {
   show: function () {
+    owo.tool.toast('长按海报保存分享!')
     owo.id.likeNum2.innerText = owo.script.name.data.lastNumber || 514273
     owo.id.userShowImage.src = ''
     setTimeout(() => {
@@ -45,13 +42,13 @@ module.exports = {
   }
   .text-bar {
     color: white;
-    font-size: 12px;
+    font-size: 14px;
     line-height: 40px;
     bottom: 50px;
     position: absolute;
     left: 6px;
     width: 440px;
-    letter-spacing: 8px;
+    letter-spacing: 6px;
     font-variant: small-caps;
     h2 {
       font-weight: normal;
@@ -65,13 +62,29 @@ module.exports = {
   width: 570px;
   height: 1020px;
   position: absolute;
+  opacity: 0;
 }
 .so-1 {left: 286px;top: 1272px;z-index: 3}
-.so-2 {left: 482px;top: 1273px;z-index: 2;user-select: none; pointer-events: none;}
+.so-2 {left: 482px;top: 1273px;z-index: 2;}
 .so-3 {left: 91px;top: 1273px;z-index: 1}
 .so-4 {left: 73px;top: 185px;z-index: 0}
 .big {
   font-weight:  bold;
-  color: #f4f492;
+  color: #ebe811;
+  position: absolute;
+  top: 103px;
+  left: 87px;
+  font-size: 37px;
+  width: 150px;
+  line-height: 44px;
+}
+.page2-like-box {
+  width: 415px;
+  height: 141px;
+  // background-image: url('@|page2-like.png|');
+  position: absolute;
+  top: 824px;
+  left: 8px;
+  background-size: 415px 141px;
 }
 </style>
